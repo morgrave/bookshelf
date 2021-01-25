@@ -1,0 +1,15 @@
+.screen {
+}
+
+
+@media (max-height: 900px) {
+    .screen {
+        max-width: 100%; height: auto;
+    }
+}
+
+@media (max-width: 800px) {
+    .screen {
+        max-width: 100%;
+    }
+}

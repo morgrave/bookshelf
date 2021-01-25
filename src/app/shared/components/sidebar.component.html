@@ -1,0 +1,11 @@
+<section class="sidenav-content">
+  <section class="nav-group collapsible" *ngFor="let campaign of campaigns">
+    <input id="{{ campaign.title }}" type="checkbox" [checked]="!(viewerService.curTitle === campaign.title)"/>
+    <label for="{{ campaign.title }}">{{ campaign.label }}</label>
+    <ul class="nav-list" *ngFor="let log of campaign.logs">
+      <li>
+        <a class="nav-link" (click)="view(campaign, log)" [ngClass]="viewerService.curIndex === log.index ? 'active' : '' ">{{ log.name }}</a>
+      </li>
+    </ul>
+  </section>
+</section>

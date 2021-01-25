@@ -1,0 +1,16 @@
+<div class="loading" *ngIf="!viewerService.log; else viewer">
+  <div class="spinner">Loading...</div>
+</div>
+<ng-template #viewer>
+  <div class="viewarea">
+    <div class="imagearea" *ngIf="viewerService.curImages.length">
+      <app-viewer-image [image]="viewerService.image"></app-viewer-image>
+    </div>
+    <div class="textarea" (scroll)="onScroll($event)">
+      <!-- <div style="position: fixed; z-index: 999; font-size: 40px; top: 50%; color: black; background-color: white;">
+        {{ curPos }} {{ viewerService.curY }} {{ viewerService.nextY }}
+      </div> -->
+      <app-viewer-text [log]="viewerService.log"></app-viewer-text>
+    </div>
+  </div>
+</ng-template>
