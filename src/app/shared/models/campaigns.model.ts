@@ -2939,6 +2939,20 @@ export const Campaigns = [
           },
         ],
       },
+      {
+        index: '0C',
+        name: '오프닝: 티크',
+        images: [
+          {
+            id: `-MbBTnAqUqUYG_RKoOoB`,
+            file: '0.png',
+          },
+          {
+            id: `-MbBfnyswLEi32a_0J3k`,
+            file: '1.png',
+          },
+        ],
+      },
     ]
   },
 ];
