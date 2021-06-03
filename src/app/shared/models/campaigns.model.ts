@@ -2948,7 +2948,25 @@ export const Campaigns = [
             file: '0.png',
           },
           {
+            id: `-MbBUpFR79fF1ilbGPU1`,
+            file: '1.png',
+          },
+          {
             id: `-MbBfnyswLEi32a_0J3k`,
+            file: '2.png',
+          },
+        ],
+      },
+      {
+        index: '0D',
+        name: '오프닝: 비비엔',
+        images: [
+          {
+            id: `-MbGJXvSasmP1WDNMDs4`,
+            file: '0.png',
+          },
+          {
+            id: `-MbGLDz_LryR-oKYIqW7`,
             file: '1.png',
           },
         ],
