@@ -2971,6 +2971,20 @@ export const Campaigns = [
           },
         ],
       },
+      {
+        index: '0E',
+        name: '오프닝: 세나리',
+        images: [
+          {
+            id: `-MbQD6uPEUl3AGlQAPJS`,
+            file: '0.png',
+          },
+          {
+            id: `-MbQFmfYsqzMLNOFgztC`,
+            file: '1.png',
+          },
+        ],
+      },
     ]
   },
 ];
