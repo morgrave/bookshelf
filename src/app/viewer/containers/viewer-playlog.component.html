@@ -3,7 +3,7 @@
 </div>
 <ng-template #viewer>
   <div class="viewarea">
-    <div class="interfacearea" *ngIf="viewerService.curInterfaces.length">
+    <div id="interfacearea" class="interfacearea" *ngIf="viewerService.curInterfaces.length">
       <app-viewer-interface [interface]="viewerService.interface"></app-viewer-interface>
     </div>
     <div id="imgarea" class="imagearea" *ngIf="viewerService.curImages.length" (panstart)="saveLastPos()" (pan)="onPan($event)">

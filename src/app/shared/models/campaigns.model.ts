@@ -3002,6 +3002,14 @@ export const Campaigns = [
             file: '2.png',
           },
           {
+            id: `-MbUoKoB9vLDRAUxrlaN`,
+            file: 'news.jpg',
+          },
+          {
+            id: `-MbUojEkpW1wwpsq86qQ`,
+            file: '2.png',
+          },
+          {
             id: `-MbUwXz8il4mNh0sCF0_`,
             file: '3.png',
           },
