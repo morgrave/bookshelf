@@ -3146,12 +3146,24 @@ export const Campaigns = [
             file: '37.png',
           },
           {
-            id: `-MbVJJasNj9P73DGibHB`,
+            id: `-MbVIA0QuTI3q9bSaVZ-`,
             file: '38.png',
           },
           {
-            id: `-MbVTaD_nXdN0JBYLvYG`,
+            id: `-MbVIYD5u5fzwgrsxsRh`,
+            file: '37.png',
+          },
+          {
+            id: `-MbVJJasNj9P73DGibHB`,
+            file: '4.png',
+          },
+          {
+            id: `-MbVSgGfzeH9g_4hn6Pc`,
             file: '39.png',
+          },
+          {
+            id: `-MbVTaD_nXdN0JBYLvYG`,
+            file: '40.png',
           },
         ],
         interfaces: [
