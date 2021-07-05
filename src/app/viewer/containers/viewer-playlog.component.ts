@@ -1,7 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { take } from 'rxjs/operators';
-import { Campaigns } from 'src/app/shared/models/campaigns.model';
+import { Campaigns } from '../../shared/models/campaigns.model';
 import { ViewerService } from '../viewer.service';
 import { DOCUMENT } from '@angular/common'; 
 
