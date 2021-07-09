@@ -15,7 +15,12 @@ export class HelperComponent implements OnInit {
   adventure: any = null;
   income: number = 0;
   outcomes: Outcome[] = [];
-  npcList = NPCs;
+  npcList = NPCs.map(x => {
+    return {
+      ...x,
+      file: x["file"] ? `${this.baseHref}assets/images/${x["file"]}` : ``,
+    };
+  });
 
   formGroup = new FormGroup({
     npcs: new FormGroup({ }),
@@ -29,7 +34,7 @@ export class HelperComponent implements OnInit {
 
   ngOnInit() {
     this.image = `${this.baseHref}assets/images/paper.png`;
-    // http://localhost:4200/helper?adventure=0&income=1000000&outcomes=basicfee,elaydren
+    // http://localhost:4200/helper?adventure=0&income=1000&outcomes=basicfee,elaydren,luka,sasha,ariel,devin,orgrim
     const outcomeArray =
       this.activatedRoute.snapshot.queryParamMap.get('outcomes');
     this.income = +this.activatedRoute.snapshot.queryParamMap.get('income')!;
@@ -42,13 +47,9 @@ export class HelperComponent implements OnInit {
       this.npcList.forEach(x => {
         (<FormGroup>this.formGroup.controls['npcs']).addControl(x.id, new FormControl(parsed.includes(x.id) ? true : false));
       })
-      this.outcomes = Outcomes.filter((x) => parsed.includes(x.id)).map((x) => {
-        // 개인별 금액 계산은 여기서 하기 좋아보인다.
-        return {
-          ...x,
-          file: x.file ? `${this.baseHref}assets/images/${x.file}` : ``,
-        };
-      });
+      const currentOutcomes = Outcomes.filter((x) => parsed.includes(x.id));
+      this.outcomes = currentOutcomes;
+      this.calculatePlayerReward();
     }
   }
 
@@ -63,7 +64,7 @@ export class HelperComponent implements OnInit {
       if (outcome) {
         this.outcomes.push({
           ...outcome,
-          file: outcome.file ? `${this.baseHref}assets/images/${outcome.file}` : ``,
+          file: outcome["file"] ? `${this.baseHref}assets/images/${outcome["file"]}` : ``,
         });
         // update router
       }
@@ -71,6 +72,7 @@ export class HelperComponent implements OnInit {
     else {
       this.outcomes = this.outcomes.filter(x => x.id !== npc.id);
     }
+    this.calculatePlayerReward();
   }
 
   isSelected(npc: NPC) {
@@ -78,6 +80,17 @@ export class HelperComponent implements OnInit {
   }
 
   calculatePlayerReward() {
-    
+    const person = this.outcomes.filter(x => x.special).length;
+    const personalGain = this.outcomes.reduce((amount, outcome) => {
+      return outcome.special ? amount : amount - outcome.value;
+    }, 100) / person;
+    this.outcomes = Outcomes.filter(x => this.outcomes.map(x => x.id).includes(x.id)).map((x) => {
+      // 개인별 금액 계산은 여기서 하기 좋아보인다.
+      return {
+        ...x,
+        file: x["file"] ? `${this.baseHref}assets/images/${x["file"]}` : ``,
+        value: x.special ? personalGain : x.value,
+      };
+    });
   }
 }

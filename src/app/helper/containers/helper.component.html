@@ -29,8 +29,8 @@
     <div class="expandbar"></div>
     <div class="options">
       <h1>조력자들</h1>
-      {{ formGroup.value | json }}
-      <!-- <form [formGroup]="getForm()">
+      <!-- {{ formGroup.value | json }}
+      <form [formGroup]="getForm()">
         <div *ngFor="let item of ['elaydren', 'elaydren2', 'elaydren3']">
           <input type="checkbox" [formControlName]="item" />
           <span>{{ item }}</span>
@@ -41,7 +41,7 @@
         <div class="card-block">
           <div class="card-media-block">
             <img
-              src="https://via.placeholder.com/60?text=Image"
+              src="{{ npc.file }}"
               class="card-media-image"
             />
             <div class="card-media-description">
