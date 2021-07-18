@@ -26,7 +26,15 @@ export const Adventures = [
   },
   {
     id: 1,
-    title: '테스트 중인 모험',
+    title: '그냥 줏음',
+  },
+  {
+    id: 2,
+    title: '엘프 전쟁군주의 보물고',
+  },
+  {
+    id: 3,
+    title: '침몰한 밀수품 선박 조사',
   },
 ];
 
@@ -71,14 +79,38 @@ export const Outcomes = [
     name: '엘라이드렌의 몫',
     value: 15,
   },
+  {
+    id: 'mazzia',
+    name: '마지아의 몫',
+    value: 15,
+  },
+  {
+    id: 'kalasta',
+    name: '칼라스타의 몫',
+    value: 20,
+  },
 ];
 
 export const NPCs = [
   {
     id: 'elaydren',
-    name: '엘라이드렌',
+    name: '엘라이드렌 드 캐니스',
     desc: '비행선을 띄우고, 손에 넣은 유물들을 연구한 뒤 경매장에 처분합니다.',
     file: 'npc_elaydren.png',
     value: 15,
+  },
+  {
+    id: 'mazzia',
+    name: '마지아 드 리란다',
+    desc: '해상, 공중 탈것을 조종할 수 있습니다. 비행선에서 착지하는 첫 전투의 배치 가능 지역이 맵 전체가 됩니다.',
+    file: 'npc_mazzia.png',
+    value: 15,
+  },
+  {
+    id: 'kalasta',
+    name: '칼라스타 위른',
+    desc: '높은 수준의 전투력을 제공합니다. 밥을 많이 먹습니다.',
+    file: 'npc_kalasta.png',
+    value: 20,
   },
 ];
