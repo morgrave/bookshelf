@@ -89,6 +89,11 @@ export const Outcomes = [
     name: '칼라스타의 몫',
     value: 20,
   },
+  {
+    id: 'mallora',
+    name: '말로라의 몫',
+    value: 4,
+  },
 ];
 
 export const NPCs = [
@@ -107,10 +112,10 @@ export const NPCs = [
     value: 15,
   },
   {
-    id: 'kalasta',
-    name: '칼라스타 위른',
-    desc: '높은 수준의 전투력을 제공합니다. 밥을 많이 먹습니다.',
-    file: 'npc_kalasta.png',
-    value: 20,
+    id: 'mallora',
+    name: '말로라 제클린',
+    desc: '낮은 수준의 전투력을 제공합니다. 체력이 0이 된 아군과 적군이 자동으로 안정화 상태가 됩니다.',
+    file: 'npc_mallora.png',
+    value: 4,
   },
 ];
