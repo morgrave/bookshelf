@@ -36,6 +36,18 @@ export const Adventures = [
     id: 3,
     title: '침몰한 밀수품 선박 조사',
   },
+  {
+    id: 4,
+    title: '샨 지하의 잊혀진 공장',
+  },
+  {
+    id: 5,
+    title: '인적이 끊긴 비밀기지',
+  },
+  {
+    id: 6,
+    title: '옛 전장의 폐허',
+  },
 ];
 
 export const Outcomes = [
@@ -94,6 +106,16 @@ export const Outcomes = [
     name: '말로라의 몫',
     value: 4,
   },
+  {
+    id: 'silver',
+    name: '실버 밥값',
+    value: 2,
+  },
+  {
+    id: 'branthus',
+    name: '브랜터스의 몫',
+    value: 8,
+  },
 ];
 
 export const NPCs = [
@@ -117,5 +139,19 @@ export const NPCs = [
     desc: '낮은 수준의 전투력을 제공합니다. 체력이 0이 된 아군과 적군이 자동으로 안정화 상태가 됩니다.',
     file: 'npc_mallora.png',
     value: 4,
+  },
+  {
+    id: 'silver',
+    name: '명견 실버',
+    desc: '낮은 수준의 전투력을 제공합니다. 첫 전투가 시작되기 전에 모든 아군이 2의 임시 체력을 얻습니다.',
+    file: 'npc_silver.png',
+    value: 2,
+  },
+  {
+    id: 'branthus',
+    name: '브랜터스 "루프탑" 코월',
+    desc: '전투와 전투 사이에 상점을 이용할 수 있습니다. 전투 중에 3배의 가격으로 상점을 이용할 수 있습니다.',
+    file: 'npc_branthus.png',
+    value: 8,
   },
 ];
