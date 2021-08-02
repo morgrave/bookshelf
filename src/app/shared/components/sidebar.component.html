@@ -4,7 +4,7 @@
     <label for="{{ campaign.title }}">{{ campaign.label }}</label>
     <ul class="nav-list" *ngFor="let log of campaign.logs">
       <li>
-        <a class="nav-link" (click)="view(campaign, log)" [ngClass]="viewerService.curIndex === log.index ? 'active' : '' ">{{ log.name }}</a>
+        <a class="nav-link" (click)="view(campaign, log)" [ngClass]="viewerService.curIndex === log.index && viewerService.curTitle === campaign.title ? 'active' : '' ">{{ log.name }}</a>
       </li>
     </ul>
   </section>

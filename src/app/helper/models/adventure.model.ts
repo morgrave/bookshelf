@@ -147,11 +147,11 @@ export const NPCs = [
     file: 'npc_silver.png',
     value: 2,
   },
-  {
-    id: 'branthus',
-    name: '브랜터스 "루프탑" 코월',
-    desc: '전투와 전투 사이에 상점을 이용할 수 있습니다. 전투 중에 3배의 가격으로 상점을 이용할 수 있습니다.',
-    file: 'npc_branthus.png',
-    value: 8,
-  },
+  // {
+  //   id: 'branthus',
+  //   name: '브랜터스 "루프탑" 코월',
+  //   desc: '전투와 전투 사이에 상점을 이용할 수 있습니다. 전투 중에 3배의 가격으로 상점을 이용할 수 있습니다.',
+  //   file: 'npc_branthus.png',
+  //   value: 8,
+  // },
 ];
