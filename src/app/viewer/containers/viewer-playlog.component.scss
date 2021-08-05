@@ -20,6 +20,9 @@
 }
 
 .imagearea {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100%;
     width: -moz-available;
     width: -webkit-fill-available;
