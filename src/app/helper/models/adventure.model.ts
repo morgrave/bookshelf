@@ -116,6 +116,11 @@ export const Outcomes = [
     name: '브랜터스의 몫',
     value: 8,
   },
+  {
+    id: 'baella',
+    name: '바엘라의 몫',
+    value: 12,
+  },
 ];
 
 export const NPCs = [
@@ -146,6 +151,13 @@ export const NPCs = [
     desc: '낮은 수준의 전투력을 제공합니다. 첫 전투가 시작되기 전에 모든 아군이 2의 임시 체력을 얻습니다.',
     file: 'npc_silver.png',
     value: 2,
+  },
+  {
+    id: 'baella',
+    name: '바엘라 스위프트스텝',
+    desc: '평균적인 모험가 이상의 전투력을 제공합니다. 비전투 상황에 진입하면 일행의 체력이 전부 회복됩니다.',
+    file: 'npc_baella.png',
+    value: 12,
   },
   // {
   //   id: 'kalasta',
