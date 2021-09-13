@@ -11709,6 +11709,44 @@ export const Campaigns = [
           },
         ],
       },
+      {
+        index: '8.5',
+        name: '8.5화',
+        images: [
+          {
+            id: `-MjNtDDk9W1aACz6eOTI`,
+            file: '0.jpg',
+          },
+          {
+            id: `-MjNvWqVj9GNYFiRGxmQ`,
+            file: '1.jpg',
+          },
+          {
+            id: `-MjNwq7N1doMrCP1x4ui`,
+            file: '2.jpg',
+          },
+          {
+            id: `-MjNxAf6IQUk8d8V2ECG`,
+            file: '3.jpg',
+          },
+          {
+            id: `-MjNxgkY96LrjPnIw7X9 `,
+            file: '4.jpg',
+          },
+          {
+            id: `-MjO1nNhCQnFyjWFATmC`,
+            file: '5.jpg',
+          },
+          {
+            id: `-MjO4XOpH4Rhn17dwSg6`,
+            file: '6.jpg',
+          },
+          {
+            id: `-MjO5QoocK_qT-tJU1YV`,
+            file: '5.jpg',
+          },
+        ],
+      },
     ]
   },
 ];
