@@ -48,6 +48,10 @@ export const Adventures = [
     id: 6,
     title: '옛 전장의 폐허',
   },
+  {
+    id: 7,
+    title: '위기에 빠진 정보원',
+  },
 ];
 
 export const Outcomes = [
@@ -94,7 +98,7 @@ export const Outcomes = [
   {
     id: 'mazzia',
     name: '마지아의 몫',
-    value: 15,
+    value: 0,
   },
   {
     id: 'kalasta',
@@ -141,7 +145,7 @@ export const NPCs = [
     name: '마지아 드 리란다',
     desc: '해상, 공중 탈것을 조종할 수 있습니다. 비행선에서 착지하는 첫 전투의 배치 가능 지역이 맵 전체가 됩니다.',
     file: 'npc_mazzia.png',
-    value: 15,
+    value: 0,
   },
   {
     id: 'mallora',
