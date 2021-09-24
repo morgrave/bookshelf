@@ -6223,6 +6223,28 @@ export const Campaigns = [
           },
         ],
       },
+      {
+        index: '21',
+        name: '21화',
+        images: [
+          {
+            id: `-MjskzmPGLiuWaRwDt7m`,
+            file: '0.jpg',
+          },
+          {
+            id: `-Mjsr1CwIG4jJTATMAb5`,
+            file: '1.jpg',
+          },
+          {
+            id: `-Mjst0Ox7wKBcYe9yOA6`,
+            file: '2.jpg',
+          },
+          {
+            id: `-Mjsx4SRd7X1hSNbGlb4`,
+            file: '3.jpg',
+          },
+        ],
+      },
     ],
   },
   {

@@ -61,6 +61,11 @@ export const Outcomes = [
     value: 10,
   },
   {
+    id: 'undergroundfee',
+    name: '암시장 수수료',
+    value: 5,
+  },
+  {
     id: 'luka',
     name: '루카의 몫',
     value: 0,
@@ -130,6 +135,11 @@ export const Outcomes = [
     name: '미냐의 몫',
     value: 15,
   },
+  {
+    id: 'grilsha',
+    name: '그릴샤의 몫',
+    value: 9,
+  },
 ];
 
 export const NPCs = [
@@ -174,6 +184,13 @@ export const NPCs = [
     desc: '높은 수준의 전투력을 제공합니다. 전투가 시작되기 전에 모든 아군이 은신 판정을 합니다.',
     file: 'npc_menya.png',
     value: 15,
+  },
+  {
+    id: 'grilsha',
+    name: '그릴샤 스텔로스',
+    desc: '평균적인 전투력을 제공합니다. 라운드 당 한 번 아군이 볼 수 있는 크리처의 공격 혹은 내성 굴림에서 1d4를 뺄 수 있습니다.',
+    file: 'npc_grilsha.png',
+    value: 9,
   },
   // {
   //   id: 'kalasta',
