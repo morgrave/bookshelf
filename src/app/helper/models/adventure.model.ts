@@ -52,6 +52,14 @@ export const Adventures = [
     id: 7,
     title: '위기에 빠진 정보원',
   },
+  {
+    id: 8,
+    title: '오크 드루이드와 위험한 숲',
+  },
+  {
+    id: 9,
+    title: '늑대발 마을의 비보',
+  },
 ];
 
 export const Outcomes = [

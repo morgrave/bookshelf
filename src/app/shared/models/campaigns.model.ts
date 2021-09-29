@@ -6245,6 +6245,16 @@ export const Campaigns = [
           },
         ],
       },
+      {
+        index: '22',
+        name: '22화',
+        images: [
+          {
+            id: `-MkRkvM0bz5SI2uaCZDz`,
+            file: '0.jpg',
+          },
+        ],
+      },
     ],
   },
   {
