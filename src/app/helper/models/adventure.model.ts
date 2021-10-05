@@ -148,6 +148,11 @@ export const Outcomes = [
     name: '그릴샤의 몫',
     value: 9,
   },
+  {
+    id: 'slara',
+    name: '슬라라의 몫',
+    value: 10,
+  },
 ];
 
 export const NPCs = [
@@ -199,6 +204,13 @@ export const NPCs = [
     desc: '평균적인 전투력을 제공합니다. 라운드 당 한 번 아군이 볼 수 있는 크리처의 공격 혹은 내성 굴림에서 1d4를 뺄 수 있습니다.',
     file: 'npc_grilsha.png',
     value: 9,
+  },
+  {
+    id: 'slara',
+    name: '슬라라 렌더',
+    desc: '평균적인 모험가보다 조금 약한 수준의 전투력을 제공합니다. 모든 등급의 치유 물약과 독을 사용할 때 행동 대신 추가 행동을 소모합니다.',
+    file: 'npc_slara.png',
+    value: 10,
   },
   // {
   //   id: 'kalasta',
