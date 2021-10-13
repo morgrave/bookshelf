@@ -60,6 +60,10 @@ export const Adventures = [
     id: 9,
     title: '늑대발 마을의 비보',
   },
+  {
+    id: 10,
+    title: '텔라니스의 보물',
+  },
 ];
 
 export const Outcomes = [
