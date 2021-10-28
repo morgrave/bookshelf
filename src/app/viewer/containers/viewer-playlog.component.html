@@ -9,7 +9,7 @@
     <div id="imgarea" class="imagearea" *ngIf="viewerService.curImages.length" (panstart)="saveLastPos()" (pan)="onPan($event)">
       <app-viewer-image [image]="viewerService.image"></app-viewer-image>
     </div>
-    <div class="textarea" [style.width]="textareaWidth" [style.min-width]="textareaWidth" (scroll)="onScroll($event)">
+    <div class="textarea" [style.width]="viewerService.curImages.length === 0 ? '100%' : textareaWidth" [style.min-width]="textareaWidth" (scroll)="onScroll($event)">
       <div class="expandbar" *ngIf="viewerService.curImages.length" (panstart)="saveLastTextAreaWidth()" (pan)="expandTextArea($event)"></div>
       <div id="mid" class="mid">
         ◀
