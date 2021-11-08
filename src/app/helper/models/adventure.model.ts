@@ -62,7 +62,11 @@ export const Adventures = [
   },
   {
     id: 10,
-    title: '텔라니스의 보물',
+    title: '황혼의 땅 저 너머로',
+  },
+  {
+    id: 11,
+    title: '국경으로 향하는 악마들',
   },
 ];
 
@@ -110,7 +114,7 @@ export const Outcomes = [
   {
     id: 'elaydren',
     name: '엘라이드렌의 몫',
-    value: 15,
+    value: 10,
   },
   {
     id: 'mazzia',
@@ -156,6 +160,11 @@ export const Outcomes = [
     id: 'slara',
     name: '슬라라의 몫',
     value: 10,
+  },
+  {
+    id: 'lahorak',
+    name: '라호라크의 몫',
+    value: 8,
   },
 ];
 
@@ -215,6 +224,13 @@ export const NPCs = [
     desc: '평균적인 모험가보다 조금 약한 수준의 전투력을 제공합니다. 모든 등급의 치유 물약과 독을 사용할 때 행동 대신 추가 행동을 소모합니다.',
     file: 'npc_slara.png',
     value: 10,
+  },
+  {
+    id: 'lahorak',
+    name: '라호라크',
+    desc: '평균적인 전투력을 제공합니다. 전투가 시작되기 전에 무작위 아이템을 발견합니다.',
+    file: 'npc_lahorak.png',
+    value: 8,
   },
   // {
   //   id: 'kalasta',
