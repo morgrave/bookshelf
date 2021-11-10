@@ -16283,6 +16283,44 @@ export const Campaigns = [
           },
         ],
       },
+      {
+        index: '27',
+        name: '27화',
+        images: [
+          {
+            id: `-Mnp4kaLJedjGrZim1Wn`,
+            file: '0.jpg',
+          },
+          {
+            id: `-Mnp8W1kLU7gwBvAIy5I`,
+            file: '1.jpg',
+          },
+          {
+            id: `-Mnp9_-cU8lJ5CUUDbIN`,
+            file: '0.jpg',
+          },
+          {
+            id: `-MnpEj8vGWv5v608G0CU`,
+            file: '2.jpg',
+          },
+          {
+            id: `-MnpF--KCaTWyKCk3Pop`,
+            file: '3.jpg',
+          },
+          {
+            id: `-MnpF5TgoZ08Oan6NGcc`,
+            file: '4.jpg',
+          },
+          {
+            id: `-MnpT3CdnoLn0R3N4RD0`,
+            file: '5.jpg',
+          },
+          {
+            id: `-MnpTKN5vY5-LjtQ5u7m`,
+            file: '4.jpg',
+          },
+        ],
+      },
     ],
   },
   {
