@@ -68,6 +68,10 @@ export const Adventures = [
     id: 11,
     title: '국경으로 향하는 악마들',
   },
+  {
+    id: 12,
+    title: '대량의 군용 폭발물',
+  },
 ];
 
 export const Outcomes = [
