@@ -22,6 +22,7 @@
     "@cds/core": "5.0.0",
     "@clr/angular": "5.0.0",
     "@clr/ui": "5.0.0",
+    "@egjs/axes": "^2.8.0",
     "angular-cli-ghpages": "^1.0.0-rc.1",
     "hammerjs": "^2.0.8",
     "rxjs": "~6.6.0",

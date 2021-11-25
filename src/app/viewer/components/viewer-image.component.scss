@@ -11,6 +11,12 @@ img {
 .screen {
 }
 
+#zoomclick {
+  position: absolute;
+  z-index: 1;
+  right: 311px;
+}
+
 @media (max-height: 900px) {
     .screen {
     }
