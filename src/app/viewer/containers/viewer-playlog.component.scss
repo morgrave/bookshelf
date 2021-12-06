@@ -6,12 +6,14 @@
 }
 
 .viewarea {
+    z-index: 1;
     display: flex;
     flex-direction: row;
     height: 100%;
 }
 
 .interfacearea {
+    z-index: 2;
     position: relative;
     top: 30px;
     left: 30px;
@@ -50,6 +52,7 @@
 }
 
 .textarea {
+    z-index: 3;
     height: 100%;
     overflow-y: scroll;
     border-left: .05rem solid #ccc;
