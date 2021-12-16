@@ -9257,7 +9257,7 @@ export const Campaigns = [
       },
       {
         index: '1',
-        name: '1화',
+        name: '1화: 추적 60분',
         images: [
           {
             id: `-MbUhTGI6ak3UxFt9YOx`,
@@ -9537,7 +9537,7 @@ export const Campaigns = [
       },
       {
         index: '2',
-        name: '2화',
+        name: '2화: 무도회 기본예절',
         images: [
           {
             id: `-Mc2jjsNyFHIZZOJlDlq`,
@@ -9953,7 +9953,7 @@ export const Campaigns = [
       },
       {
         index: '3',
-        name: '3화',
+        name: '3화: 마 촌놈들은 에어쉽 모르제?',
         images: [
           {
             id: `-Mcbms35cNg4YgW159iy`,
@@ -10517,7 +10517,7 @@ export const Campaigns = [
       },
       {
         index: '4',
-        name: '4화',
+        name: '4화: 특이점은 온다',
         images: [
           {
             id: `-MdApvV54hfsxTxevLo3`,
@@ -11081,7 +11081,7 @@ export const Campaigns = [
       },
       {
         index: '5',
-        name: '5화',
+        name: '5화: 여러분의 신고로 검거',
         images: [
           {
             id: `-MdjtrvXDFu3yXHocWXC`,
