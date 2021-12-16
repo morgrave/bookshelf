@@ -23,6 +23,7 @@ export class ViewerService {
   curIndex = ``;
   curImages: any[] = [];
   curInterfaces: any[] = [];
+  mode: 'dev' | 'prod' = 'prod';
 
   constructor(
     private locationStrategy: LocationStrategy,
@@ -57,16 +58,23 @@ export class ViewerService {
       .get<string>(`${this.baseHref}assets/${campaign.title}/logs/${log.index}.html`, this.requestOptions)
       .pipe(
         map((res) => {
-          this.log = this.sanitizer.bypassSecurityTrustHtml(campaign.npcs?.reduce((res, npc) => {
-            const regexp = new RegExp(`<span class="by">${npc.name}:</span>*`, 'gi');
-            return res.replace(regexp, `<div class="avatar" aria-hidden="true"><img src="${npc.avatar}"/></div><span class="by">${npc.name}:</span>`);
-        //  }, res).replace(/data-messageid="([-\w]{20})">/gi, `id="$1"><button onClick='const t = document.createElement("textarea");
-        //  document.body.appendChild(t);
-        //  t.value = "$1";
-        //  t.select();
-        //  document.execCommand("copy");
-        //  document.body.removeChild(t);'>복사</button>`) + `<style>${this.scss}</style>`);
-           }, res).replace(/data-messageid/gi, `id`) + `<style>${this.scss}</style>`);
+          if (this.mode === 'prod') {
+            this.log = this.sanitizer.bypassSecurityTrustHtml(campaign.npcs?.reduce((res, npc) => {
+              const regexp = new RegExp(`<span class="by">${npc.name}:</span>*`, 'gi');
+              return res.replace(regexp, `<div class="avatar" aria-hidden="true"><img src="${npc.avatar}"/></div><span class="by">${npc.name}:</span>`);
+            }, res).replace(/data-messageid/gi, `id`) + `<style>${this.scss}</style>`);
+          }
+          else {
+            this.log = this.sanitizer.bypassSecurityTrustHtml(campaign.npcs?.reduce((res, npc) => {
+              const regexp = new RegExp(`<span class="by">${npc.name}:</span>*`, 'gi');
+              return res.replace(regexp, `<div class="avatar" aria-hidden="true"><img src="${npc.avatar}"/></div><span class="by">${npc.name}:</span>`);
+            }, res).replace(/data-messageid="([-\w]{20})">/gi, `id="$1"><button onClick='const t = document.createElement("textarea");
+            document.body.appendChild(t);
+            t.value = "$1";
+            t.select();
+            document.execCommand("copy");
+            document.body.removeChild(t);'>복사</button>`) + `<style>${this.scss}</style>`);
+          }
           return;
         })
       )
