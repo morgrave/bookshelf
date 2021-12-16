@@ -72,6 +72,10 @@ export const Adventures = [
     id: 12,
     title: '대량의 군용 폭발물',
   },
+  {
+    id: 13,
+    title: '아우룸의 대금고 사수',
+  },
 ];
 
 export const Outcomes = [
@@ -178,14 +182,14 @@ export const NPCs = [
     name: '엘라이드렌 드 캐니스',
     desc: '비행선을 띄우고, 손에 넣은 유물들을 연구한 뒤 경매장에 처분합니다.',
     file: 'npc_elaydren.png',
-    value: 15,
+    value: 10,
   },
   {
     id: 'mazzia',
     name: '마지아 드 리란다',
     desc: '해상, 공중 탈것을 조종할 수 있습니다. 비행선에서 착지하는 첫 전투의 배치 가능 지역이 맵 전체가 됩니다.',
     file: 'npc_mazzia.png',
-    value: 0,
+    value: 10,
   },
   {
     id: 'mallora',
@@ -229,13 +233,13 @@ export const NPCs = [
     file: 'npc_slara.png',
     value: 10,
   },
-  {
-    id: 'lahorak',
-    name: '라호라크',
-    desc: '평균적인 전투력을 제공합니다. 전투가 시작되기 전에 무작위 아이템을 발견합니다.',
-    file: 'npc_lahorak.png',
-    value: 8,
-  },
+  // {
+  //   id: 'lahorak',
+  //   name: '라호라크',
+  //   desc: '평균적인 전투력을 제공합니다. 전투가 시작되기 전에 무작위 아이템을 발견합니다.',
+  //   file: 'npc_lahorak.png',
+  //   value: 8,
+  // },
   // {
   //   id: 'kalasta',
   //   name: '칼라스타 위른',
