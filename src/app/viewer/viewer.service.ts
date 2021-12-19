@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { map } from 'rxjs/operators';
+import { environment } from '../../environments/environment';
 import { Campaign, Log } from '../shared/models/campaigns.model';
 
 @Injectable()
@@ -58,7 +59,7 @@ export class ViewerService {
       .get<string>(`${this.baseHref}assets/${campaign.title}/logs/${log.index}.html`, this.requestOptions)
       .pipe(
         map((res) => {
-          if (this.mode === 'prod') {
+          if (environment.production === true) {
             this.log = this.sanitizer.bypassSecurityTrustHtml(campaign.npcs?.reduce((res, npc) => {
               const regexp = new RegExp(`<span class="by">${npc.name}:</span>*`, 'gi');
               return res.replace(regexp, `<div class="avatar" aria-hidden="true"><img src="${npc.avatar}"/></div><span class="by">${npc.name}:</span>`);
