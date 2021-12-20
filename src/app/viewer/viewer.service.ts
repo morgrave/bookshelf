@@ -24,7 +24,7 @@ export class ViewerService {
   curIndex = ``;
   curImages: any[] = [];
   curInterfaces: any[] = [];
-  mode: 'dev' | 'prod' = 'prod';
+  assetSrc = environment.production ? `https://raw.githubusercontent.com/morgrave/bookshelf/main/src/campaigns` : `${this.baseHref}assets`;
 
   constructor(
     private locationStrategy: LocationStrategy,
@@ -56,7 +56,7 @@ export class ViewerService {
         .toPromise();
     }
     const html = await this.http
-      .get<string>(`${this.baseHref}assets/${campaign.title}/logs/${log.index}.html`, this.requestOptions)
+      .get<string>(`${this.assetSrc}/${campaign.title}/logs/${log.index}.html`, this.requestOptions)
       .pipe(
         map((res) => {
           if (environment.production === true) {
@@ -84,12 +84,12 @@ export class ViewerService {
   }
 
   loadImage(index: number) {
-    this.image = `${this.baseHref}assets/${this.curTitle}/images/${this.curIndex}/${this.curImages[index].file}`;
+    this.image = `${this.assetSrc}/${this.curTitle}/images/${this.curIndex}/${this.curImages[index].file}`;
   }
 
   loadInterface(index: number) {
     if (this.curInterfaces[index].file) {
-      this.interface = `${this.baseHref}assets/${this.curTitle}/images/${this.curIndex}/interfaces/${this.curInterfaces[index].file}`;
+      this.interface = `${this.assetSrc}/${this.curTitle}/images/${this.curIndex}/interfaces/${this.curInterfaces[index].file}`;
     }
     else {
       this.interface = ``;
