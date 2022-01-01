@@ -24,7 +24,7 @@ export class ViewerService {
   curIndex = ``;
   curImages: any[] = [];
   curInterfaces: any[] = [];
-  assetSrc = environment.production ? `https://raw.githubusercontent.com/morgrave/bookshelf/main/src/campaigns` : `${this.baseHref}assets`;
+  assetSrc = environment.production ? `https://raw.githubusercontent.com/morgrave/bookshelf/main/src/campaigns` : `${this.baseHref}campaigns`;
 
   constructor(
     private locationStrategy: LocationStrategy,

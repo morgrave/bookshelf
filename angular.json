@@ -28,7 +28,8 @@
             "aot": true,
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/campaigns"
             ],
             "styles": [
               "node_modules/@clr/ui/clr-ui.min.css",
@@ -39,6 +40,10 @@
           },
           "configurations": {
             "production": {
+              "assets": [
+                "src/favicon.ico",
+                "src/assets"
+              ],
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
