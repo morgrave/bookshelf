@@ -76,6 +76,14 @@ export const Adventures = [
     id: 13,
     title: '아우룸의 대금고 사수',
   },
+  {
+    id: 14,
+    title: '결전',
+  },
+  {
+    id: 15,
+    title: '서부 캐니스 습격',
+  },
 ];
 
 export const Outcomes = [
