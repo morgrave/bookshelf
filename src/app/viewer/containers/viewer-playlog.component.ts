@@ -3,7 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { take } from 'rxjs/operators';
 import { Campaigns } from '../../shared/models/campaigns.model';
 import { ViewerService } from '../viewer.service';
-import { DOCUMENT } from '@angular/common'; 
+import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'app-viewer-playlog',
@@ -16,7 +16,7 @@ export class ViewerPlaylogComponent implements OnInit {
   textareaWidth = '405px';
   textareaLastWidth = 405;
   textareaCurWidth = 405;
-  
+
   constructor(
     @Inject(DOCUMENT) private document: any,
     private router: Router,
@@ -50,7 +50,7 @@ export class ViewerPlaylogComponent implements OnInit {
     if (mid) {
       let curIndex = 0;
       const curPos = (mid.getBoundingClientRect().top + mid.getBoundingClientRect().bottom) / 2;
-      if (this.viewerService.curImages.length) {
+      if (this.viewerService.curImages.length && !this.isMobile()) {
         this.viewerService.curImages.forEach((img, i) => {
           const div = document.getElementById(img.id);
           if (div) {
@@ -62,7 +62,7 @@ export class ViewerPlaylogComponent implements OnInit {
         });
         this.viewerService.loadImage(curIndex);
       }
-      if (this.viewerService.curInterfaces.length) {
+      if (this.viewerService.curInterfaces.length && !this.isMobile()) {
         this.viewerService.curInterfaces.forEach((img, i) => {
           const div = document.getElementById(img.id);
           if (div) {
@@ -85,14 +85,14 @@ export class ViewerPlaylogComponent implements OnInit {
     }
   }
 
-  onPan(event) { 
+  onPan(event) {
     const area = document.getElementById('imgarea');
     if (area) {
       area.scrollLeft = this.imgareaX - event.deltaX;
       area.scrollTop = this.imgareaY - event.deltaY;
     }
   }
-  
+
   saveLastTextAreaWidth() {
     this.textareaLastWidth = this.textareaCurWidth;
   }
@@ -102,4 +102,9 @@ export class ViewerPlaylogComponent implements OnInit {
     this.textareaWidth = `${this.textareaCurWidth}px`;
   }
 
+  isMobile() {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+      navigator.userAgent
+    );
+  }
 }
