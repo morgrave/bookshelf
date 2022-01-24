@@ -16,6 +16,7 @@ export class ViewerService {
     responseType: 'text'
   }
   scss: SafeHtml = ``;
+  fvttscss: SafeHtml = ``;
   log: SafeHtml = ``;
   image: string = ``;
   interface: string = ``;
@@ -55,26 +56,38 @@ export class ViewerService {
         )
         .toPromise();
     }
+    if (!this.fvttscss) {
+      await this.http
+        .get<string>(`${this.baseHref}assets/common.fvtt.scss`, this.requestOptions)
+        .pipe(
+          map((res) => {
+            this.fvttscss = this.sanitizer.bypassSecurityTrustHtml(res);
+            return;
+          })
+        )
+        .toPromise();
+    }
     const html = await this.http
       .get<string>(`${this.assetSrc}/${campaign.title}/logs/${log.index}.html`, this.requestOptions)
       .pipe(
         map((res) => {
+          let log = campaign.npcs?.reduce((res, npc) => {
+            const regexp = new RegExp(`<span class="by">${npc.name}:</span>*`, 'gi');
+            return res.replace(regexp, `<div class="avatar" aria-hidden="true"><img src="${npc.avatar}"/></div><span class="by">${npc.name}:</span>`);
+          }, res);
+          if (campaign.platform === 'FVTT') {
+            log = log.replace(/src="/gi, `src="http://193.123.242.178/`);
+          }
           if (environment.production === true) {
-            this.log = this.sanitizer.bypassSecurityTrustHtml(campaign.npcs?.reduce((res, npc) => {
-              const regexp = new RegExp(`<span class="by">${npc.name}:</span>*`, 'gi');
-              return res.replace(regexp, `<div class="avatar" aria-hidden="true"><img src="${npc.avatar}"/></div><span class="by">${npc.name}:</span>`);
-            }, res).replace(/data-messageid/gi, `id`) + `<style>${this.scss}</style>`);
+            this.log = this.sanitizer.bypassSecurityTrustHtml(log.replace(campaign.platform === 'FVTT' ? /data-message-id/gi : /data-messageid/gi, `id`) + `<style>${campaign.platform === 'FVTT' ? this.fvttscss : this.scss}</style>`);
           }
           else {
-            this.log = this.sanitizer.bypassSecurityTrustHtml(campaign.npcs?.reduce((res, npc) => {
-              const regexp = new RegExp(`<span class="by">${npc.name}:</span>*`, 'gi');
-              return res.replace(regexp, `<div class="avatar" aria-hidden="true"><img src="${npc.avatar}"/></div><span class="by">${npc.name}:</span>`);
-            }, res).replace(/data-messageid="([-\w]{20})">/gi, `id="$1"><button onClick='const t = document.createElement("textarea");
+            this.log = this.sanitizer.bypassSecurityTrustHtml(log.replace(campaign.platform === 'FVTT' ? /data-message-id="([\w]{16})"/gi : /data-messageid="([-\w]{20})">/gi, `id="$1"><button onClick='const t = document.createElement("textarea");
             document.body.appendChild(t);
             t.value = "$1";
             t.select();
             document.execCommand("copy");
-            document.body.removeChild(t);'>복사</button>`) + `<style>${this.scss}</style>`);
+            document.body.removeChild(t);'>복사</button>`) + `<style>${campaign.platform === 'FVTT' ? this.fvttscss : this.scss}</style>`);
           }
           return;
         })

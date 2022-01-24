@@ -1,6 +1,7 @@
 export interface Campaign {
   title: string;
   label: string;
+  platform: string;
   npcs: NPC[];
   logs: Log[];
 }
@@ -24,8 +25,286 @@ export interface Image {
 
 export const Campaigns = [
   {
+    title: 'UDT',
+    label: '우당탕탕 대학 대소동',
+    platform: 'FVTT',
+    npcs: [
+    ],
+    logs: [
+      {
+        index: '1',
+        name: '1화: 우당탕탕! 오리엔테이션!',
+        images: [
+          {
+            id: `ZKF3Z1V8n3bMsyGi`,
+            file: '0.jpg',
+          },
+          {
+            id: `lgDmws1m14ueXQtM`,
+            file: '1.jpg',
+          },
+          {
+            id: `ruQJX2PAgUQ7jMXV`,
+            file: '2.jpg',
+          },
+          {
+            id: `N6Hkw731nwyJdyxe`,
+            file: '3.jpg',
+          },
+          {
+            id: `nPnhg8QM4ihagWCR`,
+            file: '4.jpg',
+          },
+          {
+            id: `8KX3BF2lspbc9Jj4`,
+            file: '5.jpg',
+          },
+          {
+            id: `9LNOVf0BcJjIsulC`,
+            file: '6.jpg',
+          },
+          {
+            id: `JUjkr4XL5GA1Rv60`,
+            file: '7.jpg',
+          },
+          {
+            id: `6lKsitfXTcTFw62A`,
+            file: '8.jpg',
+          },
+          {
+            id: `saVj5pTFVheHBZjE`,
+            file: '9.jpg',
+          },
+          {
+            id: `U8X9WBaKpLf2o3sH`,
+            file: '10.jpg',
+          },
+          {
+            id: `G94gPHQ2ekr3YKj0`,
+            file: '11.jpg',
+          },
+          {
+            id: `Oer3aa7yrMkdQi0q`,
+            file: '12.jpg',
+          },
+          {
+            id: `Ml5A9ARtIQZqOxp9`,
+            file: '13.jpg',
+          },
+          {
+            id: `sdYKexW4eINUMw76`,
+            file: '14.jpg',
+          },
+          {
+            id: `1KnZDfRijMST2Toz`,
+            file: '15.jpg',
+          },
+          {
+            id: `po3gmS3Dcq0Levmw`,
+            file: '16.jpg',
+          },
+          {
+            id: `ozEU0P4IqpsVobT5`,
+            file: '17.jpg',
+          },
+          {
+            id: `3UQsthEVulvxYdVZ`,
+            file: '18.jpg',
+          },
+          {
+            id: `VQRZLI7003cwjQpv`,
+            file: '19.jpg',
+          },
+          {
+            id: `UAlvjMNQfzt2sRA5`,
+            file: '20.jpg',
+          },
+          {
+            id: `a31uIY3KtSjuO1S7`,
+            file: '21.jpg',
+          },
+          {
+            id: `azDlUBOqayQWRT00`,
+            file: '22.jpg',
+          },
+          {
+            id: `O4oeoPORR55vEbMP`,
+            file: '23.jpg',
+          },
+          {
+            id: `JwmbljyB2ZY4jGTW`,
+            file: '1.jpg',
+          },
+          {
+            id: `LjYWlQ5LPdM5qO1V`,
+            file: '24.jpg',
+          },
+          {
+            id: `qXQx0xzyyWHJ4YLJ`,
+            file: '25.jpg',
+          },
+          {
+            id: `hY7JAJf6CzuYqmv0`,
+            file: '26.jpg',
+          },
+          {
+            id: `G0c4r8y7czlO0LBm`,
+            file: '27.jpg',
+          },
+          {
+            id: `KGYkz4vzBU5f4M4y`,
+            file: '28.jpg',
+          },
+          {
+            id: `YyxXwnsn6MeJxlvd`,
+            file: '29.jpg',
+          },
+          {
+            id: `UYbhJiZ1ba1SDASR`,
+            file: '30.jpg',
+          },
+          {
+            id: `yoPXejEygyvLr9wV`,
+            file: '31.jpg',
+          },
+          {
+            id: `e3ZdPvrvNyokf4fi`,
+            file: '32.jpg',
+          },
+          {
+            id: `qwEhumb07kenOVUD`,
+            file: '33.jpg',
+          },
+          {
+            id: `uEwh1yv2IZoUs3VV`,
+            file: '34.jpg',
+          },
+          {
+            id: `piA4KA4Z94sfhKVO`,
+            file: '35.jpg',
+          },
+          {
+            id: `FQ7u4ThKhUNemHbO`,
+            file: '36.jpg',
+          },
+          {
+            id: `XEeVnnEvcEn4hPeR`,
+            file: '37.jpg',
+          },
+          {
+            id: `2dPnRM99TPfouSnY`,
+            file: '1.jpg',
+          },
+          {
+            id: `cwy6MEChTwaAmxC0`,
+            file: '38.jpg',
+          },
+        ],
+        interfaces: [
+          {
+            id: `ZKF3Z1V8n3bMsyGi`,
+            file: '',
+          },
+          {
+            id: `1ksNLBVpTKRBwomk`,
+            file: '0.png',
+          },
+          {
+            id: `wtCSbB47JDWS1wbX`,
+            file: '1.png',
+          },
+          {
+            id: `6AWvCSIeryxNBFz4`,
+            file: '2.png',
+          },
+          {
+            id: `Z33wYeD4eC1xXdxd`,
+            file: '3.png',
+          },
+          {
+            id: `saVj5pTFVheHBZjE`,
+            file: '4.png',
+          },
+          {
+            id: `88VqV1JLLt0uOfKQ`,
+            file: '5.png',
+          },
+          {
+            id: `vHsCEwiqPCk0ZXF7`,
+            file: '6.png',
+          },
+          {
+            id: `MwHWuPTZ4HOHXRbZ`,
+            file: '0.png',
+          },
+          {
+            id: `OeGPo7MpYR0nUX42`,
+            file: '1.png',
+          },
+          {
+            id: `EQNwIdK3tMJrEbTV`,
+            file: '2.png',
+          },
+          {
+            id: `Z4eIKw08tw9yhS1A`,
+            file: '3.png',
+          },
+          {
+            id: `faat8vNdLElr3Z2j`,
+            file: '',
+          },
+          {
+            id: `gSNO0WSVl3D8UFD1`,
+            file: '7.png',
+          },
+          {
+            id: `ZcPgC82Um1voBNvL`,
+            file: '8.png',
+          },
+          {
+            id: `pgt8SAGMsCrXu8Kz`,
+            file: '9.png',
+          },
+          {
+            id: `JBSyiPP79Gk2WlAt`,
+            file: '10.png',
+          },
+          {
+            id: `gIk3UOaP1MRyykCx`,
+            file: '11.png',
+          },
+          {
+            id: `vkAi7wNrPRPV3kZW`,
+            file: '12.png',
+          },
+          {
+            id: `qNTrQQrayg3cwpDl`,
+            file: '7.png',
+          },
+          {
+            id: `UftfrSvNTrcItbZG`,
+            file: '8.png',
+          },
+          {
+            id: `lesNnb1vpyJVJmAz`,
+            file: '9.png',
+          },
+          {
+            id: `EHRaWTK2GGyA14sJ`,
+            file: '10.png',
+          },
+          {
+            id: `2Z7xRGL9Heeh5Qgn`,
+            file: '',
+          },
+        ],
+      },
+    ]
+  },
+  {
     title: 'VS',
     label: '창공의 여행기',
+    platform: 'roll20',
     npcs: [
     ],
     logs: [
@@ -12372,6 +12651,7 @@ export const Campaigns = [
   {
     title: 'WVB',
     label: '영혼의 검',
+    platform: 'roll20',
     npcs: [
     ],
     logs: [
@@ -14844,6 +15124,7 @@ export const Campaigns = [
   {
     title: 'BCS',
     label: '보울 시티 연대기',
+    platform: 'roll20',
     npcs: [
       {
         name: '크리실라',
@@ -23695,6 +23976,7 @@ export const Campaigns = [
   {
     title: 'MU',
     label: '모그레이브 대학의 학생들',
+    platform: 'roll20',
     npcs: [
       {
         name: '에디아',
