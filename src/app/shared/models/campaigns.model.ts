@@ -26,9 +26,57 @@ export interface Image {
 export const Campaigns = [
   {
     title: 'UDT',
-    label: '우당탕탕 대학 대소동',
+    label: '우당탕탕! 대학 대소동!',
     platform: 'FVTT',
     npcs: [
+      {
+        name: 'Gamemaster',
+        avatar: 'npc_baron.png',
+      },
+      {
+        name: '알렉스',
+        avatar: 'npc_alex.png',
+      },
+      {
+        name: '시리',
+        avatar: 'npc_siri.png',
+      },
+      {
+        name: '이온',
+        avatar: 'npc_ion.png',
+      },
+      {
+        name: '유진',
+        avatar: 'npc_eugi.png',
+      },
+      {
+        name: '블랙잭',
+        avatar: 'npc_blackj.png',
+      },
+      {
+        name: '화염정령',
+        avatar: 'npc_fire.png',
+      },
+      {
+        name: '올빼미',
+        avatar: 'npc_owl.png',
+      },
+      {
+        name: '프로페서 K',
+        avatar: 'npc_kay.png',
+      },
+      {
+        name: '일리나',
+        avatar: 'npc_ilina.png',
+      },
+      {
+        name: '이나티나',
+        avatar: 'npc_inat.png',
+      },
+      {
+        name: '오팔',
+        avatar: 'npc_opal.png',
+      },
     ],
     logs: [
       {
@@ -295,6 +343,258 @@ export const Campaigns = [
           },
           {
             id: `2Z7xRGL9Heeh5Qgn`,
+            file: '',
+          },
+        ],
+      },
+      {
+        index: '2',
+        name: '2화: 우당탕탕! 밀수 대작전!',
+        images: [
+          {
+            id: `e052VUmiFb7sKosV`,
+            file: '0.jpg',
+          },
+          {
+            id: `n0CvwjylFQWUsttQ`,
+            file: '1.jpg',
+          },
+          {
+            id: `wOwh05V5h8Qu0jeI`,
+            file: '2.jpg',
+          },
+          {
+            id: `YNt9V5yttInARPFG`,
+            file: '1.jpg',
+          },
+          {
+            id: `qhQMLDTqCSwkyOyU`,
+            file: '3.jpg',
+          },
+          {
+            id: `Kv5k5mprEQixjFPk`,
+            file: '1.jpg',
+          },
+          {
+            id: `2c6sB0AnoRRxzA7q`,
+            file: '0.jpg',
+          },
+          {
+            id: `UgEx6UadBx7yDd1W`,
+            file: '4.jpg',
+          },
+          {
+            id: `YTK8DKUdXvfs5DWC`,
+            file: '5.jpg',
+          },
+          {
+            id: `05IJeUP6dGw6lgNC`,
+            file: '6.jpg',
+          },
+          {
+            id: `EM3ePpxoDlanRz5J`,
+            file: '5.jpg',
+          },
+          {
+            id: `Hq09DcAzWUWASE0z`,
+            file: '7.jpg',
+          },
+          {
+            id: `41sxDdUA6WIcruzy`,
+            file: '8.jpg',
+          },
+          {
+            id: `iVQZMWhugfybwYD9`,
+            file: '9.jpg',
+          },
+          {
+            id: `8wEBD20W40U2kd4h`,
+            file: '10.jpg',
+          },
+          {
+            id: `IZBO1x0nowtoqxr9`,
+            file: '11.jpg',
+          },
+          {
+            id: `nm3VlhzIgRNUHC42`,
+            file: '12.jpg',
+          },
+          {
+            id: `dcUiyNIVseLe1nus`,
+            file: '13.jpg',
+          },
+          {
+            id: `y0x7ahZACEx78rkm`,
+            file: '14.jpg',
+          },
+          {
+            id: `HcLabCE3J4L5uaH5`,
+            file: '15.jpg',
+          },
+          {
+            id: `4dz6dTmiwwIidnnq`,
+            file: '16.jpg',
+          },
+          {
+            id: `nIR2emp8rny9OI0u`,
+            file: '17.jpg',
+          },
+          {
+            id: `lvd3CgnXsSQxfjwb`,
+            file: '18.jpg',
+          },
+          {
+            id: `IldGH9JWA7qKnwqf`,
+            file: '19.jpg',
+          },
+          {
+            id: `PbSqbtqOxxOzjSRu`,
+            file: '20.jpg',
+          },
+          {
+            id: `k4hddi4I9BtEA16m`,
+            file: '21.jpg',
+          },
+          {
+            id: `r8fS5shod3b8vaHI`,
+            file: '22.jpg',
+          },
+          {
+            id: `uSG1ic7AnN2rDF63`,
+            file: '23.jpg',
+          },
+          {
+            id: `Cka4AlCNyiUc0vYa`,
+            file: '24.jpg',
+          },
+          {
+            id: `FN41cJInmiRlaPeD`,
+            file: '25.jpg',
+          },
+          {
+            id: `y55iZ0Gqt9Zc9biX`,
+            file: '26.jpg',
+          },
+          {
+            id: `wLXivF01ylOxyErS`,
+            file: '27.jpg',
+          },
+          {
+            id: `njTtBYrNifBfXSmn`,
+            file: '28.jpg',
+          },
+          {
+            id: `P5cfMpBRZTpRo1Ch`,
+            file: '29.jpg',
+          },
+          {
+            id: `5hcXUocBavPSFrg6`,
+            file: '30.jpg',
+          },
+          {
+            id: `yE0ZGW5ylekoVerQ`,
+            file: '31.jpg',
+          },
+          {
+            id: `lHV75FVV3zGM6blm`,
+            file: '32.jpg',
+          },
+          {
+            id: `yofrVvHXg4gu5AAI`,
+            file: '33.jpg',
+          },
+          {
+            id: `2GDyKO7TztM9pjKP`,
+            file: '34.jpg',
+          },
+          {
+            id: `IDmQzvueTq0gOuTy`,
+            file: '35.jpg',
+          },
+          {
+            id: `tgR63iso0wdIwzwR`,
+            file: '36.jpg',
+          },
+          {
+            id: `j0539uIt0k4Vodkg`,
+            file: '37.jpg',
+          },
+          {
+            id: `sj1X7a5MYVE4pkzm`,
+            file: '38.jpg',
+          },
+          {
+            id: `d4ExrfXHjVlL5NR1`,
+            file: '4.jpg',
+          },
+          {
+            id: `4OtwuRMZIXb76zuC`,
+            file: '1.jpg',
+          },
+          {
+            id: `bgN8tLQYlBjLT7O4`,
+            file: '39.jpg',
+          },
+        ],
+        interfaces: [
+          {
+            id: `e052VUmiFb7sKosV`,
+            file: '',
+          },
+          {
+            id: `BBM1bPcvVoVWUb8c`,
+            file: '0.png',
+          },
+          {
+            id: `zwiCp4SU8nvMW86I`,
+            file: '1.png',
+          },
+          {
+            id: `xudOjaYGXCb2xJkX`,
+            file: '2.png',
+          },
+          {
+            id: `DbFF6iYHcdyxrek0`,
+            file: '3.png',
+          },
+          {
+            id: `gmUOrSMQixZKSS3S`,
+            file: '4.png',
+          },
+          {
+            id: `ZBWbNEEsmKFQ4Ieu`,
+            file: '5.png',
+          },
+          {
+            id: `qvQe2LCktzP4wbwj`,
+            file: '6.png',
+          },
+          {
+            id: `dWENIjS4xINJsqPG`,
+            file: '0.png',
+          },
+          {
+            id: `iQTKRRkKy8KI6NdW`,
+            file: '1.png',
+          },
+          {
+            id: `22oMXTViCThHrCKt`,
+            file: '2.png',
+          },
+          {
+            id: `IPZWIUKGmnooWUv9`,
+            file: '3.png',
+          },
+          {
+            id: `8Lem043epuCa24IG`,
+            file: '4.png',
+          },
+          {
+            id: `92QfjdFuC76XYNxn`,
+            file: '6.png',
+          },
+          {
+            id: `xSbY7XGf8PGrb4Sq`,
             file: '',
           },
         ],
@@ -12642,6 +12942,338 @@ export const Campaigns = [
           },
           {
             id: `-MtWqS0eZA5Un6bF8PUu`,
+            file: '',
+          },
+        ],
+      },
+      {
+        index: '26',
+        name: '26화',
+        images: [
+          {
+            id: `-MudNVWgZf1lon9BM6mI`,
+            file: '0.jpg',
+          },
+          {
+            id: `-MudVGXZcYQPnymkUkBS`,
+            file: '1.jpg',
+          },
+          {
+            id: `-MudWWcler3uxKcOOjHy`,
+            file: '2.jpg',
+          },
+          {
+            id: `-MudX-u1nmr3mcrKe0Pk`,
+            file: '3.jpg',
+          },
+          {
+            id: `-Mud_RjYuGW4piYt8yod`,
+            file: '4.jpg',
+          },
+          {
+            id: `-MudglhaSnPdQPENG4H8`,
+            file: '5.jpg',
+          },
+          {
+            id: `-Mudj9QP92CGL0c3BzfN`,
+            file: '6.jpg',
+          },
+          {
+            id: `-MudjfcQzmHHPv2tZo6K`,
+            file: '7.jpg',
+          },
+          {
+            id: `-Mudjx15xaU1cYfPXAgZ`,
+            file: '8.jpg',
+          },
+          {
+            id: `-MudkIPhQ335z0yLg3Mr`,
+            file: '9.jpg',
+          },
+          {
+            id: `-MudkZQAduKQma-5rE62`,
+            file: '10.jpg',
+          },
+          {
+            id: `-Mudkg02adoASZ2uuNVv`,
+            file: '11.jpg',
+          },
+          {
+            id: `-Mudl47qd2WKQJRGLqpJ`,
+            file: '12.jpg',
+          },
+          {
+            id: `-MudlF8o-XBMKTjwqXIH`,
+            file: '13.jpg',
+          },
+          {
+            id: `-MudlP_qLZ4IcbF45fOq`,
+            file: '14.jpg',
+          },
+          {
+            id: `-MudlaTS-iPY72F6SjnD`,
+            file: '15.jpg',
+          },
+          {
+            id: `-MudlntbFq-4JXJVjRHc`,
+            file: '16.jpg',
+          },
+          {
+            id: `-MudmtCyiz3Fi8POT2Az`,
+            file: '17.jpg',
+          },
+          {
+            id: `-MudmyDfL97QbqC90Te9`,
+            file: '18.jpg',
+          },
+          {
+            id: `-MudnBIr3A2FbmDqAQ-_`,
+            file: '19.jpg',
+          },
+          {
+            id: `-Mudnduo7-JE3oqj2BlA`,
+            file: '20.jpg',
+          },
+          {
+            id: `-Mudnqco6Obbr03AG3rB`,
+            file: '21.jpg',
+          },
+          {
+            id: `-Mudo4IrBDiltPvqZt1x`,
+            file: '22.jpg',
+          },
+          {
+            id: `-MudoKHeSROeM6btXLxk`,
+            file: '23.jpg',
+          },
+          {
+            id: `-Mudp7bfNZfIb5nkdJrt`,
+            file: '24.jpg',
+          },
+          {
+            id: `-MudpnoCnzi4fPI5zBt_`,
+            file: '25.jpg',
+          },
+          {
+            id: `-MudrICm21f-9oGVT156`,
+            file: '26.jpg',
+          },
+          {
+            id: `-MudrUjUlz_oVNoVXSoa`,
+            file: '27.jpg',
+          },
+          {
+            id: `-Muds1tj2zQmj2ZE1PWt`,
+            file: '28.jpg',
+          },
+          {
+            id: `-MudsC9a2tQAwH3pcsuE`,
+            file: '29.jpg',
+          },
+          {
+            id: `-MudsGHwn5YzzXQ-OAsh`,
+            file: '30.jpg',
+          },
+          {
+            id: `-MaNAb3avcenuWvnFYuj`,
+            file: '31.jpg',
+          },
+          {
+            id: `-MudsUYd-TM2RWr_bl-N`,
+            file: '32.jpg',
+          },
+          {
+            id: `-Mudt8mHIlZ3ywBlMSag`,
+            file: '33.jpg',
+          },
+          {
+            id: `-MudtWHpenMYbvVmvihg`,
+            file: '34.jpg',
+          },
+          {
+            id: `-MudtkgxmQ8NngDidkI1`,
+            file: '35.jpg',
+          },
+          {
+            id: `-Mudu16IsEDxHYvVOnLz`,
+            file: '36.jpg',
+          },
+          {
+            id: `-Mudu6qxsaex6ITn6c2S`,
+            file: '37.jpg',
+          },
+          {
+            id: `-Mudu7cM6q5MLsyjWyVC`,
+            file: '38.jpg',
+          },
+          {
+            id: `-MuduHpY-d6409LqDJxl`,
+            file: '39.jpg',
+          },
+          {
+            id: `-MuduRtlKqqb3gMN8TeB`,
+            file: '40.jpg',
+          },
+          {
+            id: `-MuduegOjUDEvZhvv40R`,
+            file: '41.jpg',
+          },
+          {
+            id: `-Mudv0hxGgaYvREmw_yo`,
+            file: '42.jpg',
+          },
+          {
+            id: `-MudvKq5NULbAKw1f8GJ`,
+            file: '43.jpg',
+          },
+          {
+            id: `-MudvfAwB6iZD4gyWjGY`,
+            file: '44.jpg',
+          },
+          {
+            id: `-MudwWCzkvVghHgUi8DT`,
+            file: '45.jpg',
+          },
+          {
+            id: `-MudwtsNuSKdriC1eZwP`,
+            file: '46.jpg',
+          },
+          {
+            id: `-MudxoveFiV0sinoJdXo`,
+            file: '47.jpg',
+          },
+          {
+            id: `-MudxvifISev5PRlG-dQ`,
+            file: '48.jpg',
+          },
+          {
+            id: `-MudyobgSEgrmKe_HUIN`,
+            file: '49.jpg',
+          },
+          {
+            id: `-MudyzgsUp9n_Hg-kwDe`,
+            file: '50.jpg',
+          },
+          {
+            id: `-MudzwTu7oa9htKhfP2V`,
+            file: '51.jpg',
+          },
+          {
+            id: `-Mue0HUq87hXFkdVfWXN`,
+            file: '52.jpg',
+          },
+          {
+            id: `-Mue0UqDfsDCThuIyFVe`,
+            file: '53.jpg',
+          },
+          {
+            id: `-Mue1Q1v1qwcD6uoD4Tn`,
+            file: '3.jpg',
+          },
+          {
+            id: `-Mue2LmFOYyfaiyUHALg`,
+            file: '54.jpg',
+          },
+          {
+            id: `-Mue9SQ2TUnlbaZuF5rj`,
+            file: '55.jpg',
+          },
+        ],
+        interfaces: [
+          {
+            id: `-MudNVWgZf1lon9BM6mI`,
+            file: '',
+          },
+          {
+            id: `-Mudj0NEDiYwCtN3CfCu`,
+            file: '0.png',
+          },
+          {
+            id: `-MudjAqdibykjD7XGe_b`,
+            file: '1.png',
+          },
+          {
+            id: `-MudjxpTfHdGjrvlXdKl`,
+            file: '2.png',
+          },
+          {
+            id: `-Mudkhb4Io_r7UPiS6VY`,
+            file: '3.png',
+          },
+          {
+            id: `-Mudl7Ji1IGcWgpzeZdy`,
+            file: '4.png',
+          },
+          {
+            id: `-Mudlg9KXRefFJeIuDvQ`,
+            file: '5.png',
+          },
+          {
+            id: `-MudmzCtSRN7n8kIs2R-`,
+            file: '6.png',
+          },
+          {
+            id: `-MudoBtt8sO0IbdgjYYk`,
+            file: '0.png',
+          },
+          {
+            id: `-MudoSsRPW2Q-osiyKF0`,
+            file: '1.png',
+          },
+          {
+            id: `-Mudorv5hEVfuMnMngbA`,
+            file: '2.png',
+          },
+          {
+            id: `-MudqYestLEHt9dnABGI`,
+            file: '4.png',
+          },
+          {
+            id: `-Mudqivh5hgM_8JyeWdn`,
+            file: '5.png',
+          },
+          {
+            id: `-MudrfZaVreIc66b_Qcn`,
+            file: '6.png',
+          },
+          {
+            id: `-Mudsb0lZAImMatvYFhU`,
+            file: '0.png',
+          },
+          {
+            id: `-MudseRV9QBpUfNHFYbD`,
+            file: '1.png',
+          },
+          {
+            id: `-MudtIWQQwhkojjxt8O5`,
+            file: '2.png',
+          },
+          {
+            id: `-Mudu1XmrdIDYq-726fc`,
+            file: '4.png',
+          },
+          {
+            id: `-MuduVJJeBePApYFGJxZ`,
+            file: '5.png',
+          },
+          {
+            id: `-Mudv-LuJ6CSVuRvxDpP`,
+            file: '6.png',
+          },
+          {
+            id: `-MudvOPSkFtAQxwOi0pr`,
+            file: '1.png',
+          },
+          {
+            id: `-MudvoyK9jLnswnNYJWN`,
+            file: '2.png',
+          },
+          {
+            id: `-Mudw9JLtEKGxEvkn5xi`,
+            file: '4.png',
+          },
+          {
+            id: `-Mudx-T0N-WCK0NnrDvb`,
             file: '',
           },
         ],

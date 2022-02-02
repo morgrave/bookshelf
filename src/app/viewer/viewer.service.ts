@@ -71,13 +71,20 @@ export class ViewerService {
       .get<string>(`${this.assetSrc}/${campaign.title}/logs/${log.index}.html`, this.requestOptions)
       .pipe(
         map((res) => {
-          let log = campaign.npcs?.reduce((res, npc) => {
-            const regexp = new RegExp(`<span class="by">${npc.name}:</span>*`, 'gi');
-            return res.replace(regexp, `<div class="avatar" aria-hidden="true"><img src="${npc.avatar}"/></div><span class="by">${npc.name}:</span>`);
-          }, res);
+          let log = res;
           if (campaign.platform === 'FVTT') {
             log = log.replace(/src="/gi, `src="http://193.123.242.178/`);
           }
+          log = campaign.npcs?.reduce((log, npc) => {
+            if (campaign.platform === 'FVTT') {
+              const regexp = new RegExp(`(<img([^<]+)<h4 class="message-sender chat-portrait-text-size-name">${npc.name}</h4>)`, 'gi');
+              return log.replace(regexp, `<img src="${this.baseHref}assets/images/${npc.avatar}" width="36" height="36" class="message-portrait" style="border: none"/><h4 class="message-sender chat-portrait-text-size-name">${npc.name}</h4>`);
+            }
+            else {
+              const regexp = new RegExp(`<span class="by">${npc.name}:</span>*`, 'gi');
+              return log.replace(regexp, `<div class="avatar" aria-hidden="true"><img src="${npc.avatar}"/></div><span class="by">${npc.name}:</span>`);
+            }
+          }, log);
           if (environment.production === true) {
             this.log = this.sanitizer.bypassSecurityTrustHtml(log.replace(campaign.platform === 'FVTT' ? /data-message-id/gi : /data-messageid/gi, `id`) + `<style>${campaign.platform === 'FVTT' ? this.fvttscss : this.scss}</style>`);
           }
