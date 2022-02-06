@@ -84,6 +84,10 @@ export const Adventures = [
     id: 15,
     title: '서부 캐니스 습격',
   },
+  {
+    id: 16,
+    title: '고블린 최악의 날',
+  },
 ];
 
 export const Outcomes = [
