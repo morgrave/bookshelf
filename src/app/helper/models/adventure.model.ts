@@ -88,6 +88,10 @@ export const Adventures = [
     id: 16,
     title: '고블린 최악의 날',
   },
+  {
+    id: 17,
+    title: '체크메이트',
+  },
 ];
 
 export const Outcomes = [
@@ -186,6 +190,11 @@ export const Outcomes = [
     name: '라호라크의 몫',
     value: 8,
   },
+  {
+    id: 'lirra',
+    name: '리라의 몫',
+    value: 8,
+  },
 ];
 
 export const NPCs = [
@@ -244,6 +253,13 @@ export const NPCs = [
     desc: '평균적인 모험가보다 조금 약한 수준의 전투력을 제공합니다. 모든 등급의 치유 물약과 독을 사용할 때 행동 대신 추가 행동을 소모합니다.',
     file: 'npc_slara.png',
     value: 10,
+  },
+  {
+    id: 'lirra',
+    name: '리라 브로찬',
+    desc: '평균적인 전투력을 제공합니다. 적의 5피트 내에서 공격할 때 적 반대편에 아군이 접했다면 공격에 1d4를 더합니다.',
+    file: 'npc_lirra.png',
+    value: 8,
   },
   // {
   //   id: 'lahorak',
