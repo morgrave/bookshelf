@@ -2253,6 +2253,21 @@
   </div>
   <div class="message general you" data-messageid="-MvlYDQd30hhmucD2XLK">경기장에서는 세계 각지에서 몰려든 사람들과 지역 주민들의 열기가 돋궈진 듯한 분위기
     속에서, 여러분들은 교수를 따라 참가자 대기실에서 행사의 시작을 관람하게 되었습니다.</div>
+  <div class="message general">
+    <div class="spacer"></div>
+    <div class="jukeboxwhatsplaying">
+      <b>Now Playing</b>
+      <div class="playingitem">
+        <em style="color: #777">전국노래자랑</em>
+      </div>
+    </div>
+    <audio src="assets\audio\전국노래자랑.mp3" controls="controls" loop="true" onplay="
+        var sounds = document.getElementsByTagName('audio');
+        for(i=0; i<sounds.length; i++)
+          if (sounds[i] != this)
+          sounds[i].pause();
+        "></audio>
+  </div>
   <div class="message general you" data-messageid="-MvlYN7Yu24Q9oBLi4Ft">
     <div class="spacer"></div>
     <div class="avatar" aria-hidden="true"><img
