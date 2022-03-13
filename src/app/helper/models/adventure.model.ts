@@ -96,6 +96,10 @@ export const Adventures = [
     id: 18,
     title: '폐허의 아래에서',
   },
+  {
+    id: 19,
+    title: '다르콘의 운명',
+  },
 ];
 
 export const Outcomes = [
