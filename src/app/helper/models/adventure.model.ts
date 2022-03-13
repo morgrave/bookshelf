@@ -151,7 +151,7 @@ export const Outcomes = [
   {
     id: 'mazzia',
     name: '마지아의 몫',
-    value: 0,
+    value: 10,
   },
   {
     id: 'kalasta',
