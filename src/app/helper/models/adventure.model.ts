@@ -100,6 +100,10 @@ export const Adventures = [
     id: 19,
     title: '다르콘의 운명',
   },
+  {
+    id: 20,
+    title: '마녀사냥',
+  },
 ];
 
 export const Outcomes = [
