@@ -14312,6 +14312,21 @@
     <span class="tstamp" aria-hidden="true">5:30PM</span
     ><span class="by">휠:</span>@노래에 정신 못차리는 모습을 한심하게 바라봅니다
   </div>
+  <div class="message general">
+    <div class="spacer"></div>
+    <div class="jukeboxwhatsplaying">
+      <b>Now Playing</b>
+      <div class="playingitem">
+        <em style="color: #777">핑크 태풍</em>
+      </div>
+    </div>
+    <audio src="assets\audio\핑크 태풍.mp3" controls="controls" loop="true" onplay="
+        var sounds = document.getElementsByTagName('audio');
+        for(i=0; i<sounds.length; i++)
+          if (sounds[i] != this)
+          sounds[i].pause();
+        "></audio>
+  </div>
   <div class="message general you" data-messageid="-MrprJ3QlH1JSKswJ5pe">
     <div class="spacer"></div>
     <div class="avatar" aria-hidden="true">

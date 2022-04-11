@@ -73,7 +73,7 @@ export class ViewerService {
         map((res) => {
           let log = res;
           if (campaign.platform === 'FVTT') {
-            log = log.replace(/src="/gi, `src="http://193.123.242.178/`);
+            // log = log.replace(/src="/gi, `src="http://193.123.242.178/`);
           }
           log = campaign.npcs?.reduce((log, npc) => {
             if (campaign.platform === 'FVTT') {
