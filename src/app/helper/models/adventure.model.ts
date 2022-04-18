@@ -104,6 +104,10 @@ export const Adventures = [
     id: 20,
     title: '마녀사냥',
   },
+  {
+    id: 21,
+    title: '이름 없는 탑의 심연',
+  },
 ];
 
 export const Outcomes = [
