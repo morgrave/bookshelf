@@ -169,6 +169,10 @@ export const Campaigns = [
         name: '시타나',
         avatar: 'npc_sitana2.png',
       },
+      {
+        name: '욜라나',
+        avatar: 'npc_jorlanna.png',
+      },
     ],
     logs: [
       {
@@ -5520,6 +5524,16 @@ export const Campaigns = [
           {
             id: `zze8Bjab6regJC1w`,
             file: '',
+          },
+        ],
+      },
+      {
+        index: '17',
+        name: '17화: 우당탕탕! 캠퍼스 커플 대작전!',
+        images: [
+          {
+            id: `zdBQqcKV05EeqqS4`,
+            file: '0.jpg',
           },
         ],
       },
