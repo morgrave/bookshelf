@@ -108,6 +108,10 @@ export const Adventures = [
     id: 21,
     title: '이름 없는 탑의 심연',
   },
+  {
+    id: 22,
+    title: '가장 비싼 리액션',
+  },
 ];
 
 export const Outcomes = [
