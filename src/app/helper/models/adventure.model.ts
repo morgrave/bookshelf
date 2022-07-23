@@ -112,6 +112,10 @@ export const Adventures = [
     id: 22,
     title: '가장 비싼 리액션',
   },
+  {
+    id: 23,
+    title: '카운트다운: 6일차',
+  },
 ];
 
 export const Outcomes = [
