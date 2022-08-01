@@ -29,8 +29,10 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              "src/campaigns/UDT/images/18/",
-              "src/campaigns/UDT/logs/"
+              "src/campaigns/UDT/images/21/",
+              "src/campaigns/UDT/logs/",
+              "src/campaigns/VS/images/49/",
+              "src/campaigns/VS/logs/"
             ],
             "styles": [
               "node_modules/@clr/ui/clr-ui.min.css",
