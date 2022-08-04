@@ -11,13 +11,10 @@ export class ViewerImageComponent implements OnInit {
   axes: Axes.default = new Axes.default(
     {
       zoom: {
+        startPos: 1,
         range: [0.1, 3],
       },
     },
-    {},
-    {
-      zoom: 1,
-    }
   );
   imgzoom: string = 'scale(1)'
 
