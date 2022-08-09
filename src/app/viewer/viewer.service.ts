@@ -90,7 +90,7 @@ export class ViewerService {
             this.log = this.sanitizer.bypassSecurityTrustHtml(log.replace(campaign.platform === 'FVTT' ? /data-message-id/gi : /data-messageid/gi, `id`) + `<style>${campaign.platform === 'FVTT' ? this.fvttscss : this.scss}</style>`);
           }
           else {
-            this.log = this.sanitizer.bypassSecurityTrustHtml(log.replace(campaign.platform === 'FVTT' ? /data-message-id="([\w]{16})"/gi : /data-messageid="([-\w]{20})">/gi, `id="$1"><button onClick='const t = document.createElement("textarea");
+            this.log = this.sanitizer.bypassSecurityTrustHtml(log.replace(campaign.platform === 'FVTT' ? /data-message-id="([\w]{16})"/gi : /data-messageid="([-\w]{20})"/gi, `id="$1"><button onClick='const t = document.createElement("textarea");
             document.body.appendChild(t);
             t.value = "$1";
             t.select();
