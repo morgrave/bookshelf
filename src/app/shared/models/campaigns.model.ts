@@ -43384,6 +43384,19 @@ export const Campaigns = [
     ],
   },
   {
+    title: 'SKT',
+    label: '폭풍왕의 천둥(판델버 스타팅)',
+    platform: 'roll20',
+    npcs: [
+    ],
+    logs: [
+      {
+        index: '1',
+        name: '1화: 뒤쪽에 적이다! 측면을 사수하라!',
+      },
+    ],
+  },
+  {
     title: 'MU',
     label: '모그레이브 대학의 학생들',
     platform: 'roll20',
