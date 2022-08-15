@@ -29,10 +29,11 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              "src/campaigns/UDT/images/21/",
+              "src/campaigns/UDT/images/24/",
               "src/campaigns/UDT/logs/",
-              "src/campaigns/VS/images/49/",
-              "src/campaigns/VS/logs/"
+              "src/campaigns/VS/images/51/",
+              "src/campaigns/VS/logs/",
+              "src/campaigns/SKT/logs/"
             ],
             "styles": [
               "node_modules/@clr/ui/clr-ui.min.css",
