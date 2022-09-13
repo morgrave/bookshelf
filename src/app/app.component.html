@@ -13,9 +13,9 @@
     </div> -->
   </clr-header>
   <div class="content-container">
-    <nav class="sidenav" [clr-nav-level]="1">
+    <clr-vertical-nav [clrVerticalNavCollapsible]="true">
       <app-sidebar></app-sidebar>
-    </nav>
+    </clr-vertical-nav>
     <div class="content-area">
       <router-outlet></router-outlet>
     </div>

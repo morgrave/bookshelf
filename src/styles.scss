@@ -7,4 +7,6 @@
 .main-container .content-container .sidenav::-webkit-scrollbar {
   display: none;
 }
-
+.clr-vertical-nav:not(.is-collapsed) {
+  width: 15rem !important;
+}
