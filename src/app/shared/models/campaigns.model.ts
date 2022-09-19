@@ -8857,6 +8857,66 @@ export const Campaigns = [
           },
         ],
       },
+      {
+        index: '28',
+        name: '28화: 우당탕탕! 미스 아운데어 대작전!',
+        images: [
+          {
+            id: `dHBz3XzC7zidSO4M`,
+            file: '0.jpg',
+          },
+          {
+            id: `pFDxMfvrN3AzeMLk`,
+            file: '1.jpg',
+          },
+          {
+            id: `XlGyJ4GjKMKUNeiv`,
+            file: '5.jpg',
+          },
+          {
+            id: `QnfnFpZLR7prPP1F`,
+            file: '2.jpg',
+          },
+          {
+            id: `rsKw8SRxuTaK8y1S`,
+            file: '3.jpg',
+          },
+          {
+            id: `JAUMXZ05XgcUxo0F`,
+            file: '2.jpg',
+          },
+          {
+            id: `qnjZSZamMVcr7XMw`,
+            file: '5.jpg',
+          },
+          {
+            id: `axPFDXqXkD5q9NEP`,
+            file: '4.jpg',
+          },
+          {
+            id: `MY0Cxy9VaXJJPm8o`,
+            file: '6.jpg',
+          },
+          {
+            id: `vPU8BFTuSsDCekyX`,
+            file: '7.jpg',
+          },
+          {
+            id: `rJdCpawqRJi0OAVD`,
+            file: '5.jpg',
+          },
+          {
+            id: `teQJKvI5OWfjhdJF`,
+            file: '8.jpg',
+          },
+          {
+            id: `xoZ4040Nx4Aitprd`,
+            file: '9.jpg',
+          },
+        ],
+        interfaces: [
+        ],
+      },
     ]
   },
   {
