@@ -120,6 +120,10 @@ export const Adventures = [
     id: 24,
     title: '카운트다운: 5일차',
   },
+  {
+    id: 25,
+    title: '카운트다운: 4일차',
+  },
 ];
 
 export const Outcomes = [

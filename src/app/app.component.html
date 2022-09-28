@@ -2,7 +2,6 @@
   <clr-header>
     <div class="branding">
       <a routerLink="" class="nav-link">
-        <clr-icon shape="details"></clr-icon>
         <span class="title">모그레이브 도서관</span>
       </a>
     </div>
@@ -13,7 +12,7 @@
     </div> -->
   </clr-header>
   <div class="content-container">
-    <clr-vertical-nav [clrVerticalNavCollapsible]="true">
+    <clr-vertical-nav [clr-nav-level]="1" [clrVerticalNavCollapsible]="true">
       <app-sidebar></app-sidebar>
     </clr-vertical-nav>
     <div class="content-area">
