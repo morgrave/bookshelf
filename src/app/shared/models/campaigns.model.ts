@@ -49385,7 +49385,6 @@ export const Campaigns = [
             file: '91.jpg',
           },
         ],
-
         interfaces: [
           {
             id: `-MrlPHreTZjnQQX3MSFC`,
@@ -49555,6 +49554,171 @@ export const Campaigns = [
             id: `-MrmJ9MR187P5yOJKV_m`,
             file: '',
           },
+        ],
+      },
+    ],
+  },
+  {
+    title: 'COS',
+    label: '스트라드의 저주',
+    platform: 'roll20',
+    npcs: [
+    ],
+    logs: [
+      {
+        index: '1',
+        name: '1화',
+        images: [
+          {
+            id: `-NDSiMfXpuyPObHpMB_2`,
+            file: '0.jpg',
+          },
+          {
+            id: `-NDSkdK_Vfw1xV0VR1fD`,
+            file: '1.jpg',
+          },
+          {
+            id: `-NDSlRt6dp6S36aq8udq`,
+            file: '0.jpg',
+          },
+          {
+            id: `-NDSmRM08T251LD2FB1B`,
+            file: '2.jpg',
+          },
+          {
+            id: `-NDSvIFioNT6f8X2Yhez`,
+            file: '3.jpg',
+          },
+          {
+            id: `-NDSwGDy_AsHIfekUzh9`,
+            file: '4.jpg',
+          },
+          {
+            id: `-NDSwpjrE99BT5w2q6e6`,
+            file: '5.jpg',
+          },
+          {
+            id: `-NDSxxivCwSwO7l7L89D`,
+            file: '6.jpg',
+          },
+          {
+            id: `-NDSyNdZdDCDjUXjkSXl`,
+            file: '7.jpg',
+          },
+          {
+            id: `-NDSz3xJ26GJQ7ALZxPp`,
+            file: '8.jpg',
+          },
+          {
+            id: `-NDSztVgjEaH9nm4T27S`,
+            file: '9.jpg',
+          },
+          {
+            id: `-NDSzzD3LiTQtAO9QHw5`,
+            file: '10.jpg',
+          },
+          {
+            id: `-NDT-BNNaO9yPUHt_mKA`,
+            file: '11.jpg',
+          },
+          {
+            id: `-NDT-r4Lz4G7uWVNqukJ`,
+            file: '12.jpg',
+          },
+          {
+            id: `-NDT01bpvX3BdNrOnBht`,
+            file: '13.jpg',
+          },
+          {
+            id: `-NDT1r8GUDlXOsCT69VE`,
+            file: '14.jpg',
+          },
+          {
+            id: `-NDT2h9Qq32cFNG7TZ-X`,
+            file: '15.jpg',
+          },
+          {
+            id: `-NDT3mVTyXQbUSnFxL1M`,
+            file: '16.jpg',
+          },
+          {
+            id: `-NDT4uns0D8smat7aJts`,
+            file: '17.jpg',
+          },
+          {
+            id: `-NDT5up8gck7aeJUC680`,
+            file: '18.jpg',
+          },
+          {
+            id: `-NDT6dUpc_1Lio0WFYNN`,
+            file: '19.jpg',
+          },
+          {
+            id: `-NDT7Atpl19uIAyPsDNc`,
+            file: '20.jpg',
+          },
+          {
+            id: `-NDT9oein4aFD7yH3_vu`,
+            file: '21.jpg',
+          },
+          {
+            id: `-NDTAiCcjxunB5sxT7LP`,
+            file: '22.jpg',
+          },
+          {
+            id: `-NDTDZ_yZ8vejIxs9b8F`,
+            file: '23.jpg',
+          },
+          {
+            id: `-NDTDrIie5rO9eWo9j5R`,
+            file: '24.jpg',
+          },
+          {
+            id: `-NDTFgj1nVyvLXRcLdwt`,
+            file: '25.jpg',
+          },
+          {
+            id: `-NDTHVfzbSfqkqe_o2tm`,
+            file: '26.jpg',
+          },
+          {
+            id: `-NDTHlj7eDyqGWfxBw4h`,
+            file: '27.jpg',
+          },
+          {
+            id: `-NDTI_-PzP3EQOFDwn49`,
+            file: '28.jpg',
+          },
+          {
+            id: `-NDTJaHQGoGskF8HNfby`,
+            file: '29.jpg',
+          },
+          {
+            id: `-NDTKsK5wpVpDopxSmuD`,
+            file: '28.jpg',
+          },
+          {
+            id: `-NDTMl98wSbkYEwvjDs5`,
+            file: '30.jpg',
+          },
+          {
+            id: `-NDTN5tSw-Tr8on4jOSF`,
+            file: '31.jpg',
+          },
+          {
+            id: `-NDTNHIvpuEJ5EG9eJ7G`,
+            file: '32.jpg',
+          },
+          {
+            id: `-NDTNj6zNFGYaaHr-ykJ`,
+            file: '33.jpg',
+          },
+          {
+            id: `-NDTOOTx4LBS1wyzuVFM`,
+            file: '34.jpg',
+          },
+        ],
+        interfaces: [
         ],
       },
     ],
