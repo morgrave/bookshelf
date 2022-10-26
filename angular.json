@@ -29,10 +29,12 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              "src/campaigns/UDT/images/24/",
+              "src/campaigns/UDT/images/1/",
               "src/campaigns/UDT/logs/",
-              "src/campaigns/VS/images/51/",
+              "src/campaigns/VS/images/1/",
               "src/campaigns/VS/logs/",
+              "src/campaigns/COS/images/1/",
+              "src/campaigns/COS/logs/",
               "src/campaigns/SKT/logs/"
             ],
             "styles": [
