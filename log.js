@@ -2,6 +2,7 @@ const { chromium } = require("playwright");
 const fs = require("fs/promises");
 const path = require("path");
 const prettier = require("prettier");
+const { time } = require("console");
 
 // 타임스탬프 문자열에서 날짜 부분만 추출하는 헬퍼 함수
 // 예: "今日 18:04" -> "今日"
@@ -125,9 +126,9 @@ function getDatePart(timestamp) {
       const list = document.querySelector(selector);
       if (!list || !list.children[0]) return null;
       try {
-        // 제공된 스펙에 따른 정확한 경로
         return list.children[0].children[0].children[0].children[0].children[1]
           .children[0].children[0].innerText;
+        // 시스템 메시지는 타임스탬프가 없을 수도 있으니 안전빵으로 5칸 아래 메시지도 봐야 한다면 3번째 children에 [5] 사용
       } catch (e) {
         console.error("초기 타임스탬프를 찾는 데 실패했습니다.", e);
         return null;
