@@ -125,6 +125,8 @@ function getDatePart(timestamp) {
     const initialTimestamp = await page.evaluate((selector) => {
       const list = document.querySelector(selector);
       if (!list || !list.children[0]) return null;
+      console.log(list.children[0].children[0].children[0].children[0].children[1]
+          .children[0].children[0].innerText);
       try {
         return list.children[0].children[0].children[0].children[0].children[1]
           .children[0].children[0].innerText;
