@@ -99,7 +99,7 @@ async function main() {
 
     const content = await clipboard.read();
 
-    const saveDir = path.join("experiment", "log", item.group);
+    const saveDir = path.join("experiment", item.group, "log");
     await fs.ensureDir(saveDir);
 
     const filePath = path.join(saveDir, `${item.index}.html`);
