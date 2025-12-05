@@ -1,4 +1,3 @@
-
 const { chromium } = require("playwright");
 const fs = require("fs-extra");
 const path = require("path");
@@ -8,12 +7,14 @@ const EXPERIMENT_DIR = path.resolve("experiment");
 async function selectExperimentFolder() {
   const { default: inquirer } = await import("inquirer");
 
-  const folders = fs.readdirSync(EXPERIMENT_DIR).filter(f => fs.lstatSync(path.join(EXPERIMENT_DIR, f)).isDirectory());
+  const folders = fs
+    .readdirSync(EXPERIMENT_DIR)
+    .filter((f) => fs.lstatSync(path.join(EXPERIMENT_DIR, f)).isDirectory());
   const { folder } = await inquirer.prompt({
     name: "folder",
     type: "list",
     message: "Select a folder:",
-    choices: folders
+    choices: folders,
   });
   return folder;
 }
@@ -27,7 +28,7 @@ async function selectLogFile(folderPath) {
     name: "file",
     type: "list",
     message: "Select log file:",
-    choices: files
+    choices: files,
   });
   return path.join(logDir, file);
 }
@@ -61,15 +62,16 @@ async function writeTextarea(page, text) {
 async function runAndWait(page) {
   await page.click(".run-button");
   await page.waitForSelector(".stoppable");
-  await page.waitForSelector(".stoppable", { state: "detached", timeout: 300000 });
+  await page.waitForSelector(".stoppable", {
+    state: "detached",
+    timeout: 300000,
+  });
 }
 
 function replacePlaceholders(text, label, logContent) {
   const wrappedLog = "```\n" + logContent + "\n```";
 
-  return text
-    .replaceAll("{label}", label)
-    .replaceAll("{log}", wrappedLog);
+  return text.replaceAll("{label}", label).replaceAll("{log}", wrappedLog);
 }
 
 function saveClipboardToPath(baseFolder, label, mdPath, content) {
@@ -84,10 +86,12 @@ async function processMDList(page, baseFolder, label) {
   const { default: clipboard } = await import("clipboardy");
 
   const clipboardContent = await clipboard.read();
-  const mdLines = clipboardContent.split("\n").filter(line => line.endsWith(".md"));
+  const mdLines = clipboardContent
+    .split("\n")
+    .filter((line) => line.endsWith(".md"));
 
   for (const mdFile of mdLines) {
-    console.log(`📌 Processing ${mdFile} ...`);
+    console.log(`📌 ${mdFile} 처리 중...`);
 
     await writeTextarea(page, mdFile);
     await runAndWait(page);
@@ -110,7 +114,7 @@ async function main() {
   const { label } = await inquirer.prompt({
     name: "label",
     type: "input",
-    message: "Enter label:"
+    message: "로그 이름을 입력하세요:",
   });
 
   console.log(`📁 Folder: ${folder}`);
@@ -118,20 +122,25 @@ async function main() {
   console.log(`🏷 Label: ${label}`);
 
   // ── Step 2: Playwright Launch ───────────────
-  const browser = await chromium.launch({
+  const browser = await chromium.launchPersistentContext("./user_data", {
     headless: false,
     args: ["--disable-blink-features=AutomationControlled"],
-    channel: "chrome",
+    viewport: { width: 2560, height: 1080 },
   });
-  const page = await browser.newPage();
-  await page.goto("https://aistudio.google.com/u/1/prompts/1XvpEt1Ygr9EKB8SA9aNuQfRH7VuGJgO-");
-  await page.waitForSelector('textarea', { timeout: 60000 });
 
+  const pages = browser.pages();
+  const page = pages.length > 0 ? pages[0] : await browser.newPage();
+  await page.goto(
+    "https://aistudio.google.com/u/1/prompts/1XvpEt1Ygr9EKB8SA9aNuQfRH7VuGJgO-",
+  );
+  await page.waitForSelector("textarea", { timeout: 60000 });
+
+  await page.waitForTimeout(5000000);
 
   // ── Step 3: Remove auto-added options ───────────────
-  while (await page.$("ms-chat-turn-options") !== null) {
+  while ((await page.$("ms-chat-turn-options")) !== null) {
     await clickOptionMenu(page, 0);
-    console.log("🗑 Removed suggestion bubble");
+    console.log("🗑 이전 대화 내역을 삭제했습니다.");
   }
 
   // ── Step 4: Submit KB.txt ───────────────
