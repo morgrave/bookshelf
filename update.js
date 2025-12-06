@@ -169,10 +169,10 @@ async function main() {
   const labelDir = path.join(folderPath, "KB", label);
 
   fs.cpSync(labelDir, latestDir, { recursive: true });
-  console.log("📌 KB/latest updated!");
+  console.log("📌 KB/latest 복사가 완료되었습니다!");
 
   await browser.close();
-  console.log("\n✨ All done!");
+  console.log("\n✨ 지식 베이스 작업 완료!");
 }
 
 main().catch(console.error);
