@@ -13,7 +13,7 @@ async function selectExperimentFolder() {
   const { folder } = await inquirer.prompt({
     name: "folder",
     type: "list",
-    message: "Select a folder:",
+    message: "폴더를 선택해주세요:",
     choices: folders,
   });
   return folder;
@@ -27,7 +27,7 @@ async function selectLogFile(folderPath) {
   const { file } = await inquirer.prompt({
     name: "file",
     type: "list",
-    message: "Select log file:",
+    message: "로그 파일을 선택해주세요:",
     choices: files,
   });
   return path.join(logDir, file);
@@ -35,10 +35,12 @@ async function selectLogFile(folderPath) {
 
 async function clickOptionMenu(page, childrenIndex) {
   await page.waitForSelector("ms-chat-turn-options");
-  const options = await page.$$("ms-chat-turn-options");
-  const last = options[options.length - 1];
+  const prompts = await page.$$("ms-chat-turn");
+  const last = prompts[prompts.length - 1];
+  await last.hover();
 
-  const button = await last.$("button");
+  const options = await last.$("ms-chat-turn-options");
+  const button = await options.$("button");
   await button.click();
 
   await page.waitForSelector(".mat-mdc-menu-content");
@@ -64,7 +66,7 @@ async function runAndWait(page) {
   await page.waitForSelector(".stoppable");
   await page.waitForSelector(".stoppable", {
     state: "detached",
-    timeout: 300000,
+    timeout: 3000000,
   });
 }
 
@@ -85,10 +87,14 @@ function saveClipboardToPath(baseFolder, label, mdPath, content) {
 async function processMDList(page, baseFolder, label) {
   const { default: clipboard } = await import("clipboardy");
 
+  await clickOptionMenu(page, 3);
   const clipboardContent = await clipboard.read();
   const mdLines = clipboardContent
     .split("\n")
+    .map((line) => line.trim())
     .filter((line) => line.endsWith(".md"));
+
+  console.log("📋 업데이트된 파일 목록: ", mdLines);
 
   for (const mdFile of mdLines) {
     console.log(`📌 ${mdFile} 처리 중...`);
@@ -117,11 +123,11 @@ async function main() {
     message: "로그 이름을 입력하세요:",
   });
 
-  console.log(`📁 Folder: ${folder}`);
-  console.log(`📝 Log: ${logPath}`);
-  console.log(`🏷 Label: ${label}`);
+  console.log(`📁 폴더: ${folder}`);
+  console.log(`📝 로그: ${logPath}`);
+  console.log(`🏷️ 라벨: ${label}`);
 
-  // ── Step 2: Playwright Launch ───────────────
+  // 구글 AI 스튜디오 접속
   const browser = await chromium.launchPersistentContext("./user_data", {
     headless: false,
     args: ["--disable-blink-features=AutomationControlled"],
@@ -135,33 +141,30 @@ async function main() {
   );
   await page.waitForSelector("textarea", { timeout: 60000 });
 
-  await page.waitForTimeout(5000000);
-
-  // ── Step 3: Remove auto-added options ───────────────
+  // 이전 대화 내역 전부 삭제
   while ((await page.$("ms-chat-turn-options")) !== null) {
     await clickOptionMenu(page, 0);
     console.log("🗑 이전 대화 내역을 삭제했습니다.");
   }
 
-  // ── Step 4: Submit KB.txt ───────────────
+  // KB.txt 내용 입력
   const kbText = fs.readFileSync(path.join(folderPath, "KB.txt"), "utf-8");
 
   await writeTextarea(page, kbText);
   await runAndWait(page);
 
-  // ── Step 5: Submit update.txt with replaced placeholders ───────────────
-  const updatePath = path.join(folderPath, "update.txt");
+  // 사용자가 선택한 로그 내용 입력
+  const updatePath = path.join(EXPERIMENT_DIR, "update.txt");
   const updateRaw = fs.readFileSync(updatePath, "utf-8");
   const replacedUpdate = replacePlaceholders(updateRaw, label, logContent);
 
   await writeTextarea(page, replacedUpdate);
   await runAndWait(page);
 
-  // ── Step 6: Copy MD references ───────────────
-  await clickOptionMenu(page, 3);
+  // 업데이트된 지식 베이스 파일 목록 추출 및 반영
   await processMDList(page, folderPath, label);
 
-  // ── Step 7: Copy to KB/latest ───────────────
+  // KB/latest 폴더에 복사
   const latestDir = path.join(folderPath, "KB", "latest");
   const labelDir = path.join(folderPath, "KB", label);
 
