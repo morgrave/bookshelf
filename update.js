@@ -111,7 +111,7 @@ async function processMDList(page, baseFolder, label) {
 async function main() {
   const { default: inquirer } = await import("inquirer");
 
-  // ── Step 1: Select folder, log file, label ───────────────
+  // 경로 선택
   const folder = await selectExperimentFolder();
   const folderPath = path.join(EXPERIMENT_DIR, folder);
   const logPath = await selectLogFile(folderPath);
