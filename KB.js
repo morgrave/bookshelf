@@ -54,7 +54,8 @@ async function main() {
 
     const files = fs
       .readdirSync(fullDir)
-      .filter((file) => fs.statSync(path.join(fullDir, file)).isFile());
+      .filter((file) => fs.statSync(path.join(fullDir, file)).isFile())
+      .sort((a, b) => a.localeCompare(b, undefined, { numeric: true, sensitivity: 'base' }));
 
     for (const file of files) {
       const filePath = path.join(fullDir, file);

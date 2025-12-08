@@ -1,5 +1,5 @@
 const inquirer = require("inquirer");
-const { exec } = require("child_process");
+const { spawn } = require("child_process");
 
 const choices = [
   { name: "배포하기 (npm run deploy)", value: "npm run deploy" },
@@ -20,10 +20,17 @@ inquirer
   ])
   .then(({ command }) => {
     console.log(`▶ 명령 실행: ${command}`);
-    const child = exec(command);
 
-    child.stdout.on("data", (data) => console.log(data));
-    child.stderr.on("data", (data) => console.error(data));
-    child.on("close", (code) => console.log(`종료 코드: ${code}`));
+    const args = command.split(" ");
+    const cmd = args.shift();
+
+    const child = spawn(cmd, args, {
+      stdio: "inherit",
+      shell: true,
+    });
+
+    child.on("close", (code) => {
+      console.log(`\n종료 코드: ${code}`);
+    });
   })
   .catch(console.error);
