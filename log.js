@@ -198,10 +198,10 @@ function getDatePart(timestamp) {
       console.log(`현재 최상단 날짜: ${currentTopDate}`);
 
       // 3. 날짜가 다르면 루프 중단
-      // if (currentTopDate !== targetDate) {
-      //   console.log("다른 날짜의 채팅을 발견했습니다. 스크롤을 중단합니다.");
-      //   break;
-      // }
+      if (currentTopDate !== targetDate) {
+        console.log("다른 날짜의 채팅을 발견했습니다. 스크롤을 중단합니다.");
+        break;
+      }
     }
 
     console.log("기존 Emotion 스타일 태그를 제거합니다...");
