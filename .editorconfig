@@ -18,3 +18,5 @@ trim_trailing_whitespace = false
 <style data-emotion="css" data-s="">.css-15eea9h { display:none }</style>
 
 \s*style\s*=\s*"[^"]*"
+
+\b([A-Za-z0-9가-힣]+)\s+\1\b
