@@ -124,17 +124,15 @@ function getDatePart(timestamp) {
     // 1. 처음 보이는 채팅의 타임스탬프를 가져와 기준 날짜로 설정
     const initialTimestamp = await page.evaluate((selector) => {
       const list = document.querySelector(selector);
-      if (!list || !list.children[0]) return null;
-      console.log(list.children[0].children[0].children[0].children[0].children[1]
-          .children[0].children[0].innerText);
-      try {
-        return list.children[0].children[0].children[0].children[0].children[1]
-          .children[0].children[0].innerText;
-        // 시스템 메시지는 타임스탬프가 없을 수도 있으니 안전빵으로 5칸 아래 메시지도 봐야 한다면 3번째 children에 [5] 사용
-      } catch (e) {
-        console.error("초기 타임스탬프를 찾는 데 실패했습니다.", e);
-        return null;
+      if (!list) return null;
+      const items = list.querySelectorAll('[data-index]');
+      for (const item of items) {
+        const span = item.querySelector('.MuiListItemText-primary > span');
+        if (span && span.innerText) {
+          return span.innerText;
+        }
       }
+      return null;
     }, chatListSelector);
 
     if (!initialTimestamp) {
@@ -180,13 +178,15 @@ function getDatePart(timestamp) {
       // 스크롤 후 최상단 채팅의 타임스탬프 확인
       const currentTopTimestamp = await page.evaluate((selector) => {
         const list = document.querySelector(selector);
-        if (!list || !list.children[0]) return null;
-        try {
-          return list.children[0].children[0].children[0].children[0]
-            .children[1].children[0].children[0].innerText;
-        } catch (e) {
-          return null;
+        if (!list) return null;
+        const items = list.querySelectorAll('[data-index]');
+        for (const item of items) {
+          const span = item.querySelector('.MuiListItemText-primary > span');
+          if (span && span.innerText) {
+            return span.innerText;
+          }
         }
+        return null;
       }, chatListSelector);
 
       if (!currentTopTimestamp) {
@@ -222,9 +222,10 @@ function getDatePart(timestamp) {
 
         // 1. 목표 날짜와 다른 로그를 DOM에서 제거
         const childrenToRemove = [];
-        for (const li of list.children[0].children[0].children) {
+        const items = list.querySelectorAll('[data-index]');
+        for (const li of items) {
           const timestampElem = li.querySelector(
-            ".MuiListItemText-primary > span.css-1v2gfp5",
+            ".MuiListItemText-primary > span",
           );
           if (timestampElem && timestampElem.innerText) {
             const rawTimestamp = timestampElem.innerText;
