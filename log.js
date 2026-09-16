@@ -48,6 +48,8 @@ function getDatePart(timestamp) {
     },
   ]);
   const targetUrl = urlAnswer.selectedUrl;
+  const targetLogConfig = config.logs.find((log) => log.path === targetUrl);
+  const fetchAll = targetLogConfig ? !!targetLogConfig.fetchAll : false;
 
   const campaignsPath = path.join(process.cwd(), "src", "campaigns");
   let campaignFolders;
@@ -197,10 +199,12 @@ function getDatePart(timestamp) {
       const currentTopDate = getDatePart(currentTopTimestamp);
       console.log(`현재 최상단 날짜: ${currentTopDate}`);
 
-      // 3. 날짜가 다르면 루프 중단
-      if (currentTopDate !== targetDate) {
+      // 3. 날짜가 다르면 루프 중단 (fetchAll이 설정된 경우 무시하고 계속 로드)
+      if (!fetchAll && currentTopDate !== targetDate) {
         console.log("다른 날짜의 채팅을 발견했습니다. 스크롤을 중단합니다.");
         break;
+      } else if (fetchAll && currentTopDate !== targetDate) {
+        console.log(`다른 날짜(${currentTopDate})의 채팅을 발견했지만, fetchAll 옵션에 따라 계속 로드합니다.`);
       }
     }
 
@@ -233,9 +237,9 @@ function getDatePart(timestamp) {
 
             // 각 로그에 대한 판단 과정을 브라우저 콘솔에 출력
             console.log(
-              `[로그 검사] Raw: "${rawTimestamp}" | Extracted: "${messageDate}" | 비교 결과: ${messageDate !== args.dateToKeep ? "삭제" : "유지"}`,
+              `[로그 검사] Raw: "${rawTimestamp}" | Extracted: "${messageDate}" | 비교 결과: ${!args.fetchAll && messageDate !== args.dateToKeep ? "삭제" : "유지"}`,
             );
-            if (messageDate !== args.dateToKeep) {
+            if (!args.fetchAll && messageDate !== args.dateToKeep) {
               childrenToRemove.push(li);
             }
           }
@@ -248,6 +252,7 @@ function getDatePart(timestamp) {
       {
         selector: chatListSelector,
         dateToKeep: targetDate,
+        fetchAll: fetchAll,
         getDatePartFuncStr: getDatePart.toString(),
       },
     );

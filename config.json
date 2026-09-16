@@ -2,23 +2,28 @@
   "logs": [
     {
       "name": "사냥의 연회",
-      "path": "https://ccfolia.com/rooms/VlDsaGWU3/chat"
+      "path": "https://ccfolia.com/rooms/VlDsaGWU3/chat",
+      "fetchAll": false
     },
     {
       "name": "엑스페리온 시즌 4",
-      "path": "https://ccfolia.com/rooms/XUIifDq7M/chat"
+      "path": "https://ccfolia.com/rooms/XUIifDq7M/chat",
+      "fetchAll": false
     },
     {
       "name": "시트론 섬의 탐색자들",
-      "path": "https://ccfolia.com/rooms/EKhBXZgi9/chat"
+      "path": "https://ccfolia.com/rooms/EKhBXZgi9/chat",
+      "fetchAll": false
     },
     {
       "name": "불길한 핏자국",
-      "path": "https://ccfolia.com/rooms/nkDRgd6HK/chat"
+      "path": "https://ccfolia.com/rooms/nkDRgd6HK/chat",
+      "fetchAll": true
     },
     {
       "name": "인디조아",
-      "path": "https://ccfolia.com/rooms/xT_3aFhLS/chat"
+      "path": "https://ccfolia.com/rooms/xT_3aFhLS/chat",
+      "fetchAll": false
     }
   ]
 }
