@@ -23,7 +23,7 @@
     {
       "name": "인디조아",
       "path": "https://ccfolia.com/rooms/xT_3aFhLS/chat",
-      "fetchAll": false
+      "fetchAll": true
     }
   ]
 }
