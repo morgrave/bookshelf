@@ -49,7 +49,23 @@ function getDatePart(timestamp) {
   ]);
   const targetUrl = urlAnswer.selectedUrl;
   const targetLogConfig = config.logs.find((log) => log.path === targetUrl);
-  const fetchAll = targetLogConfig ? !!targetLogConfig.fetchAll : false;
+  const defaultFetchMode = targetLogConfig && targetLogConfig.fetchAll ? "all" : "single";
+
+  const fetchModeAnswer = await inquirer.prompt([
+    {
+      type: "list",
+      name: "fetchMode",
+      message: "가져올 로그의 범위를 선택하세요:",
+      choices: [
+        { name: "최신 채팅의 날짜만 (1일치)", value: "single" },
+        { name: "이전 날짜 포함 (2일치)", value: "previous" },
+        { name: "모든 로그 (전체)", value: "all" }
+      ],
+      default: defaultFetchMode
+    }
+  ]);
+  const fetchMode = fetchModeAnswer.fetchMode;
+  const fetchAll = fetchMode === "all";
 
   const campaignsPath = path.join(process.cwd(), "src", "campaigns");
   let campaignFolders;
@@ -123,6 +139,11 @@ function getDatePart(timestamp) {
     await page.waitForSelector(chatListSelector);
     console.log("채팅 목록을 찾았습니다.");
 
+    console.log("초기 채팅 항목이 로드될 때까지 기다립니다...");
+    const timestampSelector = `${chatListSelector} [data-index] .MuiListItemText-primary > span`;
+    // DOM에 요소가 나타나고 텍스트가 렌더링될 때까지 충분히 대기
+    await page.waitForSelector(timestampSelector, { timeout: 30000 });
+
     // 1. 처음 보이는 채팅의 타임스탬프를 가져와 기준 날짜로 설정
     const initialTimestamp = await page.evaluate((selector) => {
       const list = document.querySelector(selector);
@@ -148,6 +169,9 @@ function getDatePart(timestamp) {
     if (!chatListHandle) {
       throw new Error("채팅 목록 element를 찾을 수 없습니다.");
     }
+
+    let datesSeen = new Set();
+    datesSeen.add(targetDate);
 
     // 2. 다른 날짜가 나타날 때까지 스크롤을 최상단으로 올리는 과정 반복
     while (true) {
@@ -198,15 +222,27 @@ function getDatePart(timestamp) {
 
       const currentTopDate = getDatePart(currentTopTimestamp);
       console.log(`현재 최상단 날짜: ${currentTopDate}`);
+      datesSeen.add(currentTopDate);
 
-      // 3. 날짜가 다르면 루프 중단 (fetchAll이 설정된 경우 무시하고 계속 로드)
-      if (!fetchAll && currentTopDate !== targetDate) {
+      // 3. fetchMode에 따른 루프 중단 조건 확인
+      if (fetchMode === "single" && datesSeen.size > 1) {
         console.log("다른 날짜의 채팅을 발견했습니다. 스크롤을 중단합니다.");
         break;
-      } else if (fetchAll && currentTopDate !== targetDate) {
-        console.log(`다른 날짜(${currentTopDate})의 채팅을 발견했지만, fetchAll 옵션에 따라 계속 로드합니다.`);
+      } else if (fetchMode === "previous" && datesSeen.size > 2) {
+        console.log("3개 이상의 날짜를 발견했습니다. 스크롤을 중단합니다.");
+        break;
+      } else if (fetchMode === "all" && currentTopDate !== targetDate) {
+        console.log(`다른 날짜(${currentTopDate})의 채팅을 발견했지만, 전체 로드 옵션에 따라 계속 로드합니다.`);
       }
     }
+
+    let validDates = Array.from(datesSeen);
+    if (fetchMode === "single" && validDates.length > 1) {
+      validDates.pop();
+    } else if (fetchMode === "previous" && validDates.length > 2) {
+      validDates.pop();
+    }
+    console.log(`유지할 날짜 목록: ${validDates.join(", ")}`);
 
     console.log("기존 Emotion 스타일 태그를 제거합니다...");
     await page.evaluate(() => {
@@ -224,7 +260,7 @@ function getDatePart(timestamp) {
         const list = document.querySelector(args.selector);
         if (!list) return "";
 
-        // 1. 목표 날짜와 다른 로그를 DOM에서 제거
+        // 1. 목표 날짜에 해당하지 않는 로그를 DOM에서 제거
         const childrenToRemove = [];
         const items = list.querySelectorAll('[data-index]');
         for (const li of items) {
@@ -235,11 +271,13 @@ function getDatePart(timestamp) {
             const rawTimestamp = timestampElem.innerText;
             const messageDate = getDatePart(rawTimestamp);
 
+            const keep = args.fetchAll || args.validDates.includes(messageDate);
+
             // 각 로그에 대한 판단 과정을 브라우저 콘솔에 출력
             console.log(
-              `[로그 검사] Raw: "${rawTimestamp}" | Extracted: "${messageDate}" | 비교 결과: ${!args.fetchAll && messageDate !== args.dateToKeep ? "삭제" : "유지"}`,
+              `[로그 검사] Raw: "${rawTimestamp}" | Extracted: "${messageDate}" | 비교 결과: ${!keep ? "삭제" : "유지"}`,
             );
-            if (!args.fetchAll && messageDate !== args.dateToKeep) {
+            if (!keep) {
               childrenToRemove.push(li);
             }
           }
@@ -251,7 +289,7 @@ function getDatePart(timestamp) {
       },
       {
         selector: chatListSelector,
-        dateToKeep: targetDate,
+        validDates: validDates,
         fetchAll: fetchAll,
         getDatePartFuncStr: getDatePart.toString(),
       },
